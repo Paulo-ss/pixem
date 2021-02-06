@@ -11,12 +11,43 @@ html {
 
 // Classes que mudam as cores do site de acordo com
 // o tema atual (light ou dark)
-.light-theme {
+.lightTheme {
   background: $light !important;
   color: $dark !important;
 }
 
-.dark-theme {
+.darkTheme {
   background: $dark !important;
   color: $light !important;
+}
+
+.lightBg {
+  background: $light !important;
+}
+
+.lightTwoBg {
+  background: $lightTwo !important;
+}
+
+.darkBg {
+  background: $dark !important;
+}
+
+.darkTwoBg {
+  background: $darkTwo !important;
+}
+
+.lightColor {
+  color: $light !important;
+}
+
+.darkColor {
+  color: $dark !important;
+}
+
+// Classe do container principal do site
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

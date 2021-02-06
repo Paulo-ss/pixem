@@ -1,0 +1,26 @@
+.dropdownToggle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+
+  svg {
+    height: 25px;
+  }
+
+  &.active {
+    transform: rotate(30deg);
+  }
+}
+
+// Estilos do dropdown no mobile
+.dropdownMobile {
+  height: 25px;
+}

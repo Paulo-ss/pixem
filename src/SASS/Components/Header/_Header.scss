@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  @include boxShadow;
+
+  .header-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    .logo {
+      width: 200px;
+    }
+  }
+}
+
+// .headerMobile {
+//   height: 84px;
+// }
