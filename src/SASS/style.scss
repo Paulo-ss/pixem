@@ -3,11 +3,12 @@
 
 // Importando variáveis, mixins e keyframes
 @import "variables";
-@import "mixins";
 @import "keyframes";
+@import "mixins";
 
 // Importando as classes gerais que são reutilizadas
 // em vários componentes
 @import "geral";
 
 // Importando os estilos de cada componente separadamente
+@import "./Components/Header";

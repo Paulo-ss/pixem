@@ -1,0 +1,22 @@
+// Definindo a tipografia do site
+html {
+  font-family: $fontFamily;
+}
+
+:root {
+  font-size: 16px;
+}
+
+// Classes gerais usadas por diversos componentes do site
+
+// Classes que mudam as cores do site de acordo com
+// o tema atual (light ou dark)
+.light-theme {
+  background: $light !important;
+  color: $dark !important;
+}
+
+.dark-theme {
+  background: $dark !important;
+  color: $light !important;
+}
