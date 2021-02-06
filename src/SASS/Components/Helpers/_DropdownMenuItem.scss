@@ -1,0 +1,19 @@
+// Estilos para o item do dropdown menu que
+// faz o toggle no tema do site
+.themeLiItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include font(16, 400);
+
+  & > div {
+    svg {
+      width: 18px;
+      margin-right: 0.3rem;
+    }
+  }
+
+  label {
+    margin-left: 1rem;
+  }
+}

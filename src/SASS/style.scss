@@ -11,4 +11,10 @@
 @import "geral";
 
 // Importando os estilos de cada componente separadamente
-@import "./Components/Header";
+@import "./Components/Header/Header";
+@import "./Components/Header/MenuMobileBtn";
+@import "./Components/Header/Navbar";
+@import "./Components/Helpers/Dropdown";
+@import "./Components/Helpers/DropdownMenu";
+@import "./Components/Helpers/DropdownMenuItem";
+@import "./Components/Inputs/ToggleSwitch";

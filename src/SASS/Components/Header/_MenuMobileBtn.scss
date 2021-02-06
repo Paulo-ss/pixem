@@ -1,0 +1,51 @@
+.menuMobileBtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 30px;
+  margin: 1.187rem 0;
+  cursor: pointer;
+  z-index: 1000;
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: all 0.2s ease-in;
+  }
+
+  span:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+
+  &.active span:nth-child(1) {
+    top: 3px;
+    left: 3px;
+    transform: rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    top: 14px;
+  }
+
+  &.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+
+  &.active span:nth-child(3) {
+    bottom: 3px;
+    left: 3px;
+    transform: rotate(-45deg);
+  }
+}

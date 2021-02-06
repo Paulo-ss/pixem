@@ -1,0 +1,15 @@
+// Animações de entrada
+
+// Animação de baixo pra cima
+@mixin showBottom {
+  @keyframes keyShowBottom {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

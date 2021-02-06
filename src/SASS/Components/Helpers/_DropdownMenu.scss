@@ -1,0 +1,22 @@
+.dropdownMenu {
+  position: absolute;
+  top: 90%;
+  right: 0;
+  padding: 1.2rem 0;
+  @include boxShadow;
+
+  li + li {
+    margin-left: 0;
+  }
+
+  li {
+    padding: 0.5rem 1rem;
+  }
+}
+
+// Estilos no menu mobile
+.dropdownMenuMobile {
+  top: 98%;
+  right: 16px;
+  width: 220px;
+}

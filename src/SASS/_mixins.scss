@@ -1,10 +1,15 @@
-// Mixin para as fontes
+// Mixin para a tipografia
 @mixin font($size, $weight) {
   @if $size == 16 {
     // Textos normais
     font-size: 1rem;
     font-weight: $weight;
     line-height: 1.5;
+  } @else if $size == 20 {
+    // Links
+    font-size: 1.25rem;
+    font-weight: $weight;
+    line-height: 1.8;
   } @else if $size == 24 {
     // Subtítulos
     font-size: 1.5rem;
@@ -27,18 +32,23 @@
     }
   } @else if $device == medium {
     // Telas médias (entre 1199px e 700px)
-    @media (max-width: $largeDevice - 1) and (min-width: $mediumDevice) {
+    @media (mix-width: $largeDevice - 1) and (min-width: $mediumDevice) {
       @content;
     }
   } @else if $device == small {
     // Telas pequenas (entre 699px e 550px)
-    @media (max-width: $mediumDevice - 1) and (max-width: $smallDevice) {
+    @media (max-width: $mediumDevice - 1) and (min-width: $smallDevice) {
       @content;
     }
   } @else if $device == extraSmall {
     // Telas de celular (abaixo de 549px)
-    @media (max-width: $smallDevice) {
+    @media (max-width: $smallDevice - 1) {
       @content;
     }
   }
+}
+
+// Mixing do box-shadow
+@mixin boxShadow {
+  box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.1);
 }
