@@ -1,0 +1,44 @@
+// Mixin para as fontes
+@mixin font($size, $weight) {
+  @if $size == 16 {
+    // Textos normais
+    font-size: 1rem;
+    font-weight: $weight;
+    line-height: 1.5;
+  } @else if $size == 24 {
+    // Subtítulos
+    font-size: 1.5rem;
+    font-weight: $weight;
+    line-height: 2;
+  } @else if $size == 30 {
+    // Títulos
+    font-size: 1, 875rem;
+    font-weight: $weight;
+    line-height: 2.5;
+  }
+}
+
+// Mixin para os estilos responsivos
+@mixin responsive($device) {
+  @if $device == large {
+    // Telas grandes (acima de 1200px)
+    @media (min-width: $largeDevice) {
+      @content;
+    }
+  } @else if $device == medium {
+    // Telas médias (entre 1199px e 700px)
+    @media (max-width: $largeDevice - 1) and (min-width: $mediumDevice) {
+      @content;
+    }
+  } @else if $device == small {
+    // Telas pequenas (entre 699px e 550px)
+    @media (max-width: $mediumDevice - 1) and (max-width: $smallDevice) {
+      @content;
+    }
+  } @else if $device == extraSmall {
+    // Telas de celular (abaixo de 549px)
+    @media (max-width: $smallDevice) {
+      @content;
+    }
+  }
+}
