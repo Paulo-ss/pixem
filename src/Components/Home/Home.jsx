@@ -1,4 +1,5 @@
 import React from "react";
+import Photos from "../SearchResults/Photos/Photos";
 import Features from "./Features";
 import Jumbotron from "./Jumbotron";
 import PalavrasChave from "./PalavrasChave";
@@ -12,6 +13,8 @@ const Home = () => {
       <PalavrasChave />
       {/* Section com o que o site fornece */}
       <Features />
+      {/* Section com as fotos do endpoint curated */}
+      <Photos />
     </section>
   );
 };

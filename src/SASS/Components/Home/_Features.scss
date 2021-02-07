@@ -5,7 +5,16 @@
     margin: 1.5rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     gap: $gutter;
+
+    @include responsive(small) {
+      grid-template-columns: minmax(300px, 550px);
+    }
+
+    @include responsive(extraSmall) {
+      grid-template-columns: 1fr;
+    }
 
     .feature {
       position: relative;
@@ -28,7 +37,7 @@
         }
       }
 
-      p {
+      p.text {
         @include font(20, 400);
         text-align: center;
       }

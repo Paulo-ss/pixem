@@ -18,10 +18,22 @@ const Navbar = () => {
       <ul className={`navbarNav ${theme ? "darkTheme" : "lightTheme"}`}>
         <Router>
           <li>
-            <Link to=""> Fotos curated </Link>
+            <Link
+              to=""
+              className={`${theme ? "darkTwoHoverBg" : "lightTwoHoverBg"}`}
+            >
+              {" "}
+              Fotos curated{" "}
+            </Link>
           </li>
           <li>
-            <Link to=""> Vídeos populares </Link>
+            <Link
+              to=""
+              className={`${theme ? "darkTwoHoverBg" : "lightTwoHoverBg"}`}
+            >
+              {" "}
+              Vídeos populares{" "}
+            </Link>
           </li>
           {/* Dropdown menu */}
           <li>
