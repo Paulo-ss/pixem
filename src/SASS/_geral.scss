@@ -15,36 +15,55 @@ body {
 
 // Classes que mudam as cores do site de acordo com
 // o tema atual (light ou dark)
+
+// Cor do fundo e do texto branco e preto respectivamente
 .lightTheme {
   background: $light !important;
   color: $dark !important;
 }
 
+// Cor do fundo e do texto preto e branco respectivamente
 .darkTheme {
   background: $dark !important;
   color: $light !important;
 }
 
+// Fundo no primeiro tom de branco
 .lightBg {
   background: $light !important;
 }
 
+// Fundo no segundo tom de branco (mais escuro)
 .lightTwoBg {
   background: $lightTwo !important;
 }
 
+// Fundo no terceiro tom de branco (mais escuro ainda)
+.lightThreeBg {
+  background: $lightThree !important;
+}
+
+// Fundo no primeiro tom de preto
 .darkBg {
   background: $dark !important;
 }
 
+// Fundo no segundo tom de preto (mais escuro)
 .darkTwoBg {
   background: $darkTwo !important;
 }
 
+// Fundo no terceiro tom de preto (mais escuro ainda)
+.darkThreeBg {
+  background: $darkThree !important;
+}
+
+// Cor do texto no primeiro tom de branco
 .lightColor {
   color: $light !important;
 }
 
+// Cor de texto no primeiro tom de preto
 .darkColor {
   color: $dark !important;
 }
@@ -67,11 +86,10 @@ body {
     &::before {
       content: "";
       position: absolute;
-      top: 48%;
-      left: -5px;
+      top: 70%;
       display: block;
-      width: 20px;
-      height: 20px;
+      width: 40px;
+      height: 2px;
       background: $primaryColor;
     }
   }
