@@ -1,0 +1,13 @@
+.photos {
+  position: relative;
+  padding-top: $shapeDividerGutter;
+  padding-bottom: $gutter;
+
+  @include responsive(small) {
+    padding-top: $gutter;
+  }
+
+  @include responsive(extraSmall) {
+    padding-top: $gutter;
+  }
+}

@@ -27,7 +27,8 @@ const Features = () => {
             <div className={`icon ${theme ? "darkThreeBg" : "lightThreeBg"}`}>
               {theme ? <FreeWhiteIcon /> : <FreeIcon />}
             </div>
-            <p>
+            <p className="subtitle"> Gratuidade </p>
+            <p className="text">
               {" "}
               Tenha acesso as melhores fotos e vídeos de maneira totalmente
               gratuita{" "}
@@ -37,17 +38,19 @@ const Features = () => {
             <div className={`icon ${theme ? "darkThreeBg" : "lightThreeBg"}`}>
               {theme ? <EscolherWhiteIcon /> : <EscolherIcon />}
             </div>
-            <p>
+            <p className="subtitle"> Fotos curated </p>
+            <p className="text">
               {" "}
-              As melhores fotos tendências escolhidas a dedo pela equipe da
-              Pexels{" "}
+              Fotos escolhidas a dedo pela Pexels que são atualizadas todos os
+              dias para você ficar ligado nas tendências{" "}
             </p>
           </div>
           <div className={`feature`}>
             <div className={`icon ${theme ? "darkThreeBg" : "lightThreeBg"}`}>
               {theme ? <VideoWhiteIcon /> : <VideoIcon />}
             </div>
-            <p> Veja os vídeos mais populares do momento </p>
+            <p className="subtitle"> Vídeo populares </p>
+            <p className="text"> Veja os vídeos mais populares do momento </p>
           </div>
         </div>
       </div>

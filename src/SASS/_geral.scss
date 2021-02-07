@@ -7,15 +7,20 @@ html {
   font-size: 16px;
 }
 
-body {
-  height: 2000px;
+h1,
+h2,
+h3,
+p,
+a {
+  &::selection {
+    background: $primaryColor;
+  }
 }
 
 // Classes gerais usadas por diversos componentes do site
 
 // Classes que mudam as cores do site de acordo com
 // o tema atual (light ou dark)
-
 // Cor do fundo e do texto branco e preto respectivamente
 .lightTheme {
   background: $light !important;
@@ -68,6 +73,56 @@ body {
   color: $dark !important;
 }
 
+// Classes para hover de acordo com o tema
+// Segundo tom de branco
+.lightTwoHoverBg {
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background: $lightTwo;
+  }
+}
+
+// Segundo tom de preto
+.darkTwoHoverBg {
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background: $darkTwo;
+  }
+}
+
+// Classes com fill para svg do shape divider
+// Primeiro tom de branco
+.lightFill {
+  fill: $light !important;
+}
+
+// Segundo tom de branco
+.lightTwoFill {
+  fill: $lightTwo !important;
+}
+
+// Terceiro tom de branco
+.lightThreeFill {
+  fill: $lightThree !important;
+}
+
+// Primeiro tom de preto
+.darkFill {
+  fill: $dark !important;
+}
+
+// Segundo tom de preto
+.darkTwoFill {
+  fill: $darkTwo !important;
+}
+
+// Terceiro tom de preto
+.darkThreeFill {
+  fill: $darkThree !important;
+}
+
 // Classe do container principal do site
 .container {
   max-width: 1400px;
@@ -78,6 +133,7 @@ body {
 // Estilo de título e subtítulo
 .title {
   display: block;
+  max-width: 650px;
 
   h1 {
     position: relative;
@@ -93,4 +149,12 @@ body {
       background: $primaryColor;
     }
   }
+
+  p {
+    @include font(24, 200);
+  }
+}
+
+.subtitle {
+  @include font(24, 400);
 }
