@@ -55,3 +55,24 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+// Estilo de título e subtítulo
+.title {
+  display: block;
+
+  h1 {
+    position: relative;
+    @include font(30, 200);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 48%;
+      left: -5px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: $primaryColor;
+    }
+  }
+}

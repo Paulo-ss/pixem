@@ -5,6 +5,14 @@
   overflow: hidden;
   z-index: 1;
 
+  @include responsive(small) {
+    height: 350px;
+  }
+
+  @include responsive(extraSmall) {
+    height: 330px;
+  }
+
   .coverImg {
     position: absolute;
   }
