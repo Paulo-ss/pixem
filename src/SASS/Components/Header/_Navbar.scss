@@ -27,6 +27,7 @@
   top: 120%;
   right: 0;
   @include boxShadow;
+  z-index: 1000;
 
   .navbarNav {
     flex-direction: column;

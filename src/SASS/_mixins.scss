@@ -32,7 +32,7 @@
     }
   } @else if $device == medium {
     // Telas médias (entre 1199px e 700px)
-    @media (mix-width: $largeDevice - 1) and (min-width: $mediumDevice) {
+    @media (max-width: $largeDevice - 1) and (min-width: $mediumDevice) {
       @content;
     }
   } @else if $device == small {

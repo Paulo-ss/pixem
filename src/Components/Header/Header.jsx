@@ -10,7 +10,7 @@ import MenuMobileBtn from "./MenuMobileBtn";
 import Navbar from "./Navbar";
 
 const Header = () => {
-  const { theme, mobileMenu } = useSelector((state) => state.userInterface);
+  const { theme } = useSelector((state) => state.userInterface);
   const matchMedia = useMedia("(max-width: 699px)");
 
   return (

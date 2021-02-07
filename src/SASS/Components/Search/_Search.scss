@@ -1,0 +1,96 @@
+.searchForm {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 10rem auto 0 auto;
+  transition: all 0.2s ease-in;
+
+  // Classe sticky que gruda o input no topo
+  // ao dar scroll para baixo na página
+  &.sticky {
+    position: fixed !important;
+    top: 0px !important;
+    max-width: unset !important;
+    width: 100% !important;
+    @include boxShadow;
+    margin: 0;
+
+    @include responsive(medium) {
+      margin: 0;
+    }
+  }
+
+  @include responsive(medium) {
+    margin: 10rem 1.5rem 0 1.5rem;
+  }
+
+  @include responsive(small) {
+    top: 1px;
+    margin: 0;
+  }
+
+  @include responsive(extraSmall) {
+    top: 1px;
+    margin: 0;
+  }
+
+  .searchInput {
+    @include font(16, 200);
+    width: 92%;
+    padding: 1.8rem 1rem;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in;
+
+    @include responsive(medium) {
+      width: 85%;
+    }
+
+    @include responsive(small) {
+      width: 80%;
+    }
+
+    @include responsive(extraSmall) {
+      width: 75%;
+    }
+
+    &:hover,
+    &:focus {
+      border: 2px solid $primaryColor;
+    }
+  }
+
+  .searchBtn {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 8%;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    @include responsive(medium) {
+      width: 15%;
+    }
+
+    @include responsive(small) {
+      width: 20%;
+    }
+
+    @include responsive(extraSmall) {
+      width: 25%;
+    }
+
+    &:hover,
+    &:focus {
+      filter: contrast(1.5);
+    }
+
+    svg {
+      width: 40px;
+    }
+  }
+}

@@ -4,6 +4,7 @@
   right: 0;
   padding: 1.2rem 0;
   @include boxShadow;
+  z-index: 1000;
 
   li + li {
     margin-left: 0;
