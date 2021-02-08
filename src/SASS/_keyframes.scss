@@ -27,3 +27,15 @@
     }
   }
 }
+
+// Animação de loading skeleton para as imagens e vídeos
+@mixin loadingSkeleton {
+  @keyframes keyLoadingSkeleton {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -200%;
+    }
+  }
+}

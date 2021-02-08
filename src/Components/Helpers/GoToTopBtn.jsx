@@ -32,7 +32,7 @@ const GoToTopBtn = () => {
   }, []);
 
   return (
-    <div className={`goToTop active`} onClick={goToTop} ref={topBtn}>
+    <div className={`goToTop`} onClick={goToTop} ref={topBtn}>
       <button className={`topBtn`}>
         <UpArrowIcon />
       </button>

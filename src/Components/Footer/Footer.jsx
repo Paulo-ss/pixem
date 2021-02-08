@@ -21,6 +21,7 @@ const Footer = () => {
                 <img src={logoPixem} alt="Logo da Pixem Stock" />
               </Link>
             </Router>
+            <p> Alguns direitos reservados. </p>
           </div>
           <div className="collumn">
             <h2 className="subtitle"> Pexels </h2>
@@ -31,7 +32,7 @@ const Footer = () => {
                 rel="noreferrer"
                 title="Pexels"
               >
-                Fotos fornecidas pela Pexels
+                Fotos e vídeos fornecidos pela Pexels
               </a>
               <img
                 src="https://images.pexels.com/lib/api/pexels-white.png"

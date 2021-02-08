@@ -1,0 +1,42 @@
+.loadingAnimation {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-image: linear-gradient(
+    90deg,
+    rgb(199, 199, 199) 0px,
+    rgb(243, 243, 243) 50%,
+    rgb(199, 199, 199) 100%
+  );
+  background-color: rgb(199, 199, 199);
+  background-size: 200%;
+  animation: keyLoadingSkeleton 1.5s infinite linear;
+
+  @include responsive(small) {
+    width: 240px;
+  }
+
+  @include responsive(extraSmall) {
+    width: 330px;
+  }
+
+  span {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 40%;
+    height: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      90deg,
+      rgb(199, 199, 199) 0px,
+      rgb(243, 243, 243) 50%,
+      rgb(199, 199, 199) 100%
+    );
+    background-color: rgb(199, 199, 199);
+    background-size: 200%;
+    animation: keyLoadingSkeleton 1.5s infinite linear;
+  }
+}
+
+@include loadingSkeleton;
