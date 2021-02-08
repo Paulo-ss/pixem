@@ -13,7 +13,7 @@ h3,
 p,
 a {
   &::selection {
-    background: $primaryColor;
+    background: $highlightColor;
   }
 }
 
