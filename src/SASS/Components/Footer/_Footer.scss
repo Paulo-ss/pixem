@@ -1,0 +1,47 @@
+.footer {
+  position: relative;
+  padding-top: $gutter;
+  background: $primaryColor;
+
+  .footerWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include responsive(small) {
+      grid-template-columns: 1fr;
+    }
+
+    @include responsive(extraSmall) {
+      grid-template-columns: 1fr;
+    }
+
+    .collumn {
+      .text {
+        @include font(20, 400);
+        margin-top: 1rem;
+
+        img {
+          width: 100px;
+        }
+      }
+    }
+
+    .collumn.logo {
+      width: 200px;
+    }
+  }
+
+  .miniFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $gutter;
+    padding: 1.2rem 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
