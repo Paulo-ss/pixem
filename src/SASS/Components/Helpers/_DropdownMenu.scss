@@ -5,6 +5,7 @@
   padding: 1.2rem 0;
   @include boxShadow;
   z-index: 1000;
+  animation: keyShowFromTop 0.2s ease-in forwards;
 
   li + li {
     margin-left: 0;
@@ -14,6 +15,8 @@
     padding: 0.5rem 1rem;
   }
 }
+
+@include showFromTop;
 
 // Estilos no menu mobile
 .dropdownMenuMobile {
