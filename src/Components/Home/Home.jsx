@@ -14,7 +14,7 @@ const Home = () => {
       {/* Section com o que o site fornece */}
       <Features />
       {/* Section com as fotos do endpoint curated */}
-      <Photos />
+      <Photos title="Fotos Curated" shape={true} seeMore={true} />
     </section>
   );
 };

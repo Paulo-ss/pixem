@@ -132,12 +132,20 @@ a {
 
 // Estilo de título e subtítulo
 .title {
+  position: relative;
   display: block;
   max-width: 650px;
 
   h1 {
-    position: relative;
     @include font(30, 200);
+
+    @include responsive(small) {
+      font-size: 1.8rem;
+    }
+
+    @include responsive(extraSmall) {
+      font-size: 1.5rem;
+    }
 
     &::before {
       content: "";

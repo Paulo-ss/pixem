@@ -14,4 +14,44 @@
   @include responsive(extraSmall) {
     grid-template-columns: 1fr;
   }
+
+  a:hover .details {
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .gridItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .details {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.5);
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s ease-in;
+
+      .author {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        @include font(16, 200);
+        color: $light;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          margin-left: 0.7rem;
+        }
+      }
+    }
+  }
 }
