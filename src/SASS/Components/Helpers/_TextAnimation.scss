@@ -1,0 +1,42 @@
+.textAnimation {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  @include responsive(small) {
+    margin-top: 8rem;
+  }
+
+  @include responsive(extraSmall) {
+    margin-top: 8rem;
+  }
+
+  h1 {
+    position: relative;
+    @include font(30, 200);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 450px;
+    color: $lightTwo;
+
+    @include responsive(small) {
+      font-size: 2rem;
+    }
+
+    @include responsive(extraSmall) {
+      font-size: 1.85rem;
+    }
+
+    &::after {
+      content: "|";
+      display: inline-block;
+      margin-left: 0.5rem;
+      animation: keyBlinking 0.7s linear infinite alternate;
+    }
+  }
+}
+
+@include blinking;
