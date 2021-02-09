@@ -1,5 +1,12 @@
 .palavrasChave {
   padding: $gutter 0;
+  opacity: 0;
+
+  &.animateEntry {
+    animation: keyShowBottom 0.6s ease-out forwards;
+  }
+
+  @include showBottom;
 
   .palavras {
     display: flex;

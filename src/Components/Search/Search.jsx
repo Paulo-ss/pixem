@@ -19,7 +19,7 @@ const Search = ({ className }) => {
     // da distância do topo da página do elemento
     const elementPosition = () => {
       // Acessando o valor do topo do elemento no hook useRef
-      return element.current.getBoundingClientRect().top;
+      return element.current.offsetTop;
     };
 
     elementPosition();
