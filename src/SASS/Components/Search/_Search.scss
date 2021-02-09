@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1100px;
-  margin: 10rem auto 0 auto;
+  margin: 13rem auto 0 auto;
   transition: all 0.2s ease-in;
 
   // Classe sticky que gruda o input no topo
@@ -23,7 +23,7 @@
   }
 
   @include responsive(medium) {
-    margin: 10rem 1.5rem 0 1.5rem;
+    margin: 13rem 1.5rem 0 1.5rem;
   }
 
   @include responsive(small) {

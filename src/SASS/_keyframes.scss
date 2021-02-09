@@ -39,3 +39,16 @@
     }
   }
 }
+
+// Animação de piscar para o texto animation
+@mixin blinking {
+  @keyframes keyBlinking {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}

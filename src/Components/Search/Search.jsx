@@ -57,7 +57,7 @@ const Search = ({ className }) => {
           theme ? "darkTheme darkTwoBg" : "lightTheme"
         }`}
         id="search"
-        placeholder="Encontre as melhores imagens e vídeos..."
+        placeholder="Pesquise por natureza, tecnologia, pessoas..."
         autoComplete="off"
       />
       <button
