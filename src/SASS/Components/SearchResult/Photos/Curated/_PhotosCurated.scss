@@ -10,4 +10,14 @@
   @include responsive(extraSmall) {
     padding-top: $gutter;
   }
+
+  .wrapper {
+    opacity: 0;
+  }
+
+  .wrapper.animateEntry {
+    animation: keyShowBottom 0.6s ease-out forwards;
+  }
+
+  @include showBottom;
 }
