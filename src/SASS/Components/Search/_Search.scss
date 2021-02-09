@@ -94,3 +94,12 @@
     }
   }
 }
+
+// Classe recebida como props pelo componente
+// search, que serve para deixar o input com
+// o tamanho de 100% da tela quanto estiver
+// fora da home
+.searchForm.fullWindowSize {
+  max-width: 100%;
+  margin: 0;
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Pexels from "../../Helpers/Pexels";
-import SeeMoreBtn from "../../Helpers/SeeMoreBtn";
-import ShapeDivider from "../../Helpers/ShapeDivider";
-import PhotosGrid from "./PhotosGrid";
+import Pexels from "../../../Helpers/Pexels";
+import SeeMoreBtn from "../../../Helpers/SeeMoreBtn";
+import ShapeDivider from "../../../Helpers/ShapeDivider";
+import PhotosGrid from "./PhotosCuratedGrid";
 
 const Photos = ({ title, shape, seeMore }) => {
   // Tema atual do site

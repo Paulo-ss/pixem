@@ -5,7 +5,7 @@ import { ReactComponent as SerchBlack } from "../../Assets/searchBlack.svg";
 import { ReactComponent as SearchWhite } from "../../Assets/searchWhite.svg";
 import { useSelector } from "react-redux";
 
-const Search = () => {
+const Search = ({ className }) => {
   // Estado do campo de pesquisa
   const [searchQuery, setSearchQuery] = React.useState("");
   // Acessando o estado do tema atual do site
@@ -48,7 +48,7 @@ const Search = () => {
   }, []);
 
   return (
-    <form ref={element} className="searchForm">
+    <form ref={element} className={`searchForm ${className ? className : ""}`}>
       <Input
         value={searchQuery}
         onChange={({ target }) => setSearchQuery(target.value)}

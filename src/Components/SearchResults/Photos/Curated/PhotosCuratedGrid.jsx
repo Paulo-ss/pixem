@@ -1,5 +1,5 @@
 import React from "react";
-import PhotosGridItem from "./PhotosGridItem";
+import PhotosGridItem from "./PhotosCuratedGridItem";
 
 const PhotosGrid = () => {
   return (

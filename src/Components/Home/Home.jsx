@@ -1,5 +1,6 @@
 import React from "react";
-import Photos from "../SearchResults/Photos/Photos";
+import Search from "../Search/Search";
+import PhotosCurated from "../SearchResults/Photos/Curated/PhotosCurated";
 import Features from "./Features";
 import Jumbotron from "./Jumbotron";
 import PalavrasChave from "./PalavrasChave";
@@ -14,7 +15,7 @@ const Home = () => {
       {/* Section com o que o site fornece */}
       <Features />
       {/* Section com as fotos do endpoint curated */}
-      <Photos title="Fotos Curated" shape={true} seeMore={true} />
+      <PhotosCurated title="Fotos Curated" shape={true} seeMore={true} />
     </section>
   );
 };
