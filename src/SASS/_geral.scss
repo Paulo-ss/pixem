@@ -1,5 +1,7 @@
 // Definindo a tipografia do site
-html {
+html,
+button,
+input {
   font-family: $fontFamily;
 }
 

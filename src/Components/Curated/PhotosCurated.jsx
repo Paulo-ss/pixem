@@ -4,8 +4,9 @@ import Pexels from "../Helpers/Pexels";
 import SeeMoreBtn from "./SeeMoreBtn";
 import ShapeDivider from "../Helpers/ShapeDivider";
 import PhotosCuratedGrid from "./PhotosCuratedGrid";
+import Pagination from "./Pagination";
 
-const Photos = ({ animateInstantly, shape, seeMore, subText }) => {
+const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
   // Tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
 
@@ -79,6 +80,8 @@ const Photos = ({ animateInstantly, shape, seeMore, subText }) => {
           {/* Botão de ver mais que leva para outra página com mais resultados,
           só aparece se a prop de seeMore for true */}
           {seeMore && <SeeMoreBtn path="/curated" text="Ver mais" />}
+          {/* Páginação */}
+          {pagination && <Pagination reducer="curated" />}
         </div>
       </div>
     </section>

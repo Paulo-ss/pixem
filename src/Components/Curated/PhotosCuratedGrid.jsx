@@ -6,18 +6,13 @@ import { getCuratedPhotos } from "../../Store/Reducers/curated.reducer";
 
 const PhotosGrid = () => {
   // Loading das fotos curated
-  const { loading, data, error, perPage, page } = useSelector(
-    (state) => state.curated
-  );
+  const { loading, perPage, page } = useSelector((state) => state.curated);
   const dispatch = useDispatch();
 
-  // Fazendo uma requisição no endpoint de
-  // fotos curated
+  // Fazendo uma requisição no endpoint de fotos curated
   React.useEffect(() => {
-    if (!data && !error) {
-      dispatch(getCuratedPhotos({ perPage, page }));
-    }
-  }, [dispatch, perPage, page, data, error]);
+    dispatch(getCuratedPhotos({ perPage, page }));
+  }, [dispatch, perPage, page]);
 
   return (
     <div className={`grid`}>
