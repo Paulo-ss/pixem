@@ -1,0 +1,102 @@
+.paginacao {
+  position: relative;
+  margin: 2rem 0;
+
+  .paginationControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      @include font(20, 400);
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      outline: none;
+      background: $primaryColor;
+      border: none;
+      box-shadow: 3px 3px $dark;
+      transition: all 0.2s ease-in;
+      cursor: pointer;
+
+      @include responsive(small) {
+        padding: 0.6rem;
+      }
+
+      @include responsive(extraSmall) {
+        font-size: 1rem;
+        padding: 0.6rem;
+      }
+
+      &:hover,
+      &:focus {
+        top: 3px;
+        left: 3px;
+        box-shadow: none;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+
+        @include responsive(extraSmall) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .prevPage {
+      svg {
+        margin-right: 0.6rem;
+      }
+    }
+
+    .nextPage {
+      svg {
+        margin-left: 0.6rem;
+      }
+    }
+
+    .totalPages {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 2rem;
+
+      form {
+        width: 20%;
+        margin-right: 0.8rem;
+
+        @include responsive(small) {
+          width: 35%;
+        }
+
+        @include responsive(extraSmall) {
+          width: 35%;
+        }
+
+        .pageInput {
+          @include font(20, 400);
+          width: 100%;
+          padding: 0.3rem;
+          outline: none;
+          border: 2px solid transparent;
+          transition: all 0.2s ease-in;
+
+          &:hover,
+          &:focus {
+            border-color: $primaryColor;
+          }
+        }
+      }
+
+      .total {
+        @include font(20, 200);
+      }
+    }
+  }
+}
