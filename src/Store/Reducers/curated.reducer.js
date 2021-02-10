@@ -19,4 +19,5 @@ const curated = createAsyncSlice({
 });
 
 export const { asyncAction: getCuratedPhotos } = curated;
+export const { changePage, changePerPage } = curated.actions;
 export default curated.reducer;

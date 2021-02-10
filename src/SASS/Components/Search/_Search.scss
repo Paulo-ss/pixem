@@ -15,7 +15,8 @@
     max-width: unset !important;
     width: 100% !important;
     @include boxShadow;
-    margin: 0;
+    margin: 0 !important;
+    z-index: 4000;
 
     @include responsive(medium) {
       margin: 0;
@@ -63,8 +64,10 @@
   }
 
   .searchBtn {
+    position: absolute;
+    right: 0;
     width: 8%;
-    padding: 1.2rem 0;
+    height: 100%;
     border: 2px solid transparent;
     outline: none;
     cursor: pointer;

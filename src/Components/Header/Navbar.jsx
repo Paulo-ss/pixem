@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Dropdown from "../Helpers/Dropdown";
 // Importando o custom hook de useMedia
 import useMedia from "../../Hooks/useMedia";
@@ -16,30 +16,30 @@ const Navbar = () => {
       }`}
     >
       <ul className={`navbarNav ${theme ? "darkTheme" : "lightTheme"}`}>
-        <Router>
-          <li>
-            <Link
-              to=""
-              className={`${theme ? "darkTwoHoverBg" : "lightTwoHoverBg"}`}
-            >
-              {" "}
-              Fotos curated{" "}
-            </Link>
-          </li>
-          <li>
-            <Link
-              to=""
-              className={`${theme ? "darkTwoHoverBg" : "lightTwoHoverBg"}`}
-            >
-              {" "}
-              Vídeos populares{" "}
-            </Link>
-          </li>
-          {/* Dropdown menu */}
-          <li>
-            <Dropdown />
-          </li>
-        </Router>
+        <li>
+          <NavLink
+            to="/curated"
+            className={`${theme ? "darkTwoHoverBg" : "lightTwoHoverBg"}`}
+            activeStyle={{ background: `${theme ? "#272727" : "#fafafa"}` }}
+          >
+            {" "}
+            Fotos curated{" "}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/videos-populares"
+            className={`${theme ? "darkTwoHoverBg" : "lightTwoHoverBg"}`}
+            activeStyle={{ background: `${theme ? "#272727" : "#fafafa"}` }}
+          >
+            {" "}
+            Vídeos populares{" "}
+          </NavLink>
+        </li>
+        {/* Dropdown menu */}
+        <li>
+          <Dropdown />
+        </li>
       </ul>
     </nav>
   );

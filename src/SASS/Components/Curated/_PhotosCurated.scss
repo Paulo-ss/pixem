@@ -1,0 +1,48 @@
+.photos {
+  position: relative;
+  padding-bottom: $gutter;
+
+  .subText {
+    @include font(20, 400);
+    max-width: 600px;
+    margin-bottom: 2rem;
+
+    @include responsive(small) {
+      font-size: 1.1rem;
+    }
+
+    @include responsive(extraSmall) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &.shapeDividerGutter {
+    padding-top: $shapeDividerGutter;
+
+    @include responsive(small) {
+      padding-top: 0;
+    }
+
+    @include responsive(extraSmall) {
+      padding-top: 0;
+    }
+  }
+
+  @include responsive(small) {
+    padding-top: $gutter;
+  }
+
+  @include responsive(extraSmall) {
+    padding-top: $gutter;
+  }
+
+  .wrapper {
+    opacity: 0;
+  }
+
+  .wrapper.animateEntry {
+    animation: keyShowBottom 0.6s ease-out forwards;
+  }
+
+  @include showBottom;
+}
