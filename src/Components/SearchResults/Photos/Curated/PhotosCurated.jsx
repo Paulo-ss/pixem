@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Pexels from "../../../Helpers/Pexels";
 import SeeMoreBtn from "../../../Helpers/SeeMoreBtn";
 import ShapeDivider from "../../../Helpers/ShapeDivider";
-import PhotosGrid from "./PhotosCuratedGrid";
+import PhotosCuratedGrid from "./PhotosCuratedGrid";
 
 const Photos = ({ title, shape, seeMore }) => {
   // Tema atual do site
@@ -22,12 +22,11 @@ const Photos = ({ title, shape, seeMore }) => {
     // no ref
     const elementTopPosition =
       element.current.getBoundingClientRect().top - windowSize;
-    console.log(elementTopPosition);
 
     // Função que lida com o scroll
     const onScroll = () => {
       const scrollPosition = window.pageYOffset;
-      console.log(scrollPosition);
+
       if (scrollPosition > elementTopPosition) {
         element.current.classList.add("animateEntry");
       }
@@ -55,7 +54,7 @@ const Photos = ({ title, shape, seeMore }) => {
             <h1> {title} </h1>
           </div>
           {/* Grid com as fotos retornadas pela API */}
-          <PhotosGrid />
+          <PhotosCuratedGrid />
           {/* Texto atribuindo créditos a Pexels */}
           <Pexels />
           {/* Botão de ver mais que leva para outra página com mais resultados,
