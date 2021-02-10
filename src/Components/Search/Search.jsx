@@ -54,7 +54,7 @@ const Search = ({ className }) => {
         onChange={({ target }) => setSearchQuery(target.value)}
         type="text"
         className={`searchInput ${
-          theme ? "darkTheme darkTwoBg" : "lightTheme"
+          theme ? "darkTheme darkTwoBg" : "lightTheme lightTwoBg"
         }`}
         id="search"
         placeholder="Pesquise por natureza, tecnologia, pessoas..."
@@ -62,7 +62,7 @@ const Search = ({ className }) => {
       />
       <button
         type="submit"
-        className={`searchBtn ${theme ? "darkTwoBg" : "lightBg"}`}
+        className={`searchBtn ${theme ? "darkTwoBg" : "lightTwoBg"}`}
       >
         {theme ? <SearchWhite /> : <SerchBlack />}
       </button>

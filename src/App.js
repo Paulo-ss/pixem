@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PhotosCuratedPage from "./Components/Curated/PhotosCuratedPage";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import GoToTopBtn from "./Components/Helpers/GoToTopBtn";
@@ -10,22 +11,22 @@ import "./CSS/style.min.css";
 
 function App() {
   return (
-    <section>
-      {/* Header principal do site */}
-      <Header />
-      <Router>
-        <Switch>
+    <BrowserRouter>
+      <section>
+        {/* Header principal do site */}
+        <Header />
+        <Routes>
           {/* Home do site */}
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-      {/* Botão da o scroll para o topo da página */}
-      <GoToTopBtn />
-      {/* Rodapé do site */}
-      <Footer />
-    </section>
+          <Route path="/" element={<Home />} />
+          {/* Página com as fotos curated */}
+          <Route path="curated" element={<PhotosCuratedPage />} />
+        </Routes>
+        {/* Botão da o scroll para o topo da página */}
+        <GoToTopBtn />
+        {/* Rodapé do site */}
+        <Footer />
+      </section>
+    </BrowserRouter>
   );
 }
 

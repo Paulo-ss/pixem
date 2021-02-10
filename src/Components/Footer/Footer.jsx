@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // Importando o logo da pixem
 import logoPixem from "../../Assets/logoPixemLight.png";
 // Importando os ícones do github
@@ -16,11 +16,10 @@ const Footer = () => {
       <div className="container">
         <div className="footerWrapper">
           <div className="collumn logo">
-            <Router>
-              <Link to="/">
-                <img src={logoPixem} alt="Logo da Pixem Stock" />
-              </Link>
-            </Router>
+            <Link to="/">
+              <img src={logoPixem} alt="Logo da Pixem Stock" />
+            </Link>
+
             <p> Alguns direitos reservados. </p>
           </div>
           <div className="collumn">

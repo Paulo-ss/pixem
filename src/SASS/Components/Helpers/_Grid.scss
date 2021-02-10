@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(260px, 1fr));
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  grid-template-rows: repeat(auto-fit, 200px);
   grid-auto-flow: dense;
   gap: 1rem;
 
