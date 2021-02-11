@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// Importando o SVG da camera
-import { ReactComponent as CameraIcon } from "../../Assets/camera.svg";
 import { useSelector } from "react-redux";
+import { ReactComponent as CameraIcon } from "../../../Assets/camera.svg";
 
-const PhotosGridItem = () => {
-  const { data } = useSelector((state) => state.curated);
+const SearchPhotosResultsGridItem = () => {
+  const { data } = useSelector((state) => state.searchPhotos);
 
   // Função que define o span de column e row
   // que cada imagem deve ocupar no grid baseado
@@ -60,4 +59,4 @@ const PhotosGridItem = () => {
   );
 };
 
-export default PhotosGridItem;
+export default SearchPhotosResultsGridItem;

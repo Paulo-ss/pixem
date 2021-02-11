@@ -1,0 +1,8 @@
+.photosSearchResults {
+  position: relative;
+  padding: $gutter;
+
+  &.shapeDividerGutter {
+    padding-top: $shapeDividerGutter;
+  }
+}

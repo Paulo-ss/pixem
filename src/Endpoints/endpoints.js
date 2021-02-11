@@ -12,3 +12,25 @@ export const GET_CURATED_PHOTOS = (perPage, page) => ({
     },
   },
 });
+
+// Endpoint de uma foto específica
+export const GET_PHOTO = (photoId) => ({
+  url: `https://api.pexels.com/v1/photos/${photoId}`,
+  options: {
+    method: "GET",
+    headers: {
+      Authorization: api_key,
+    },
+  },
+});
+
+// Endpoint dos resultados de busca para fotos
+export const SEARCH_PHOTOS = (query, orientation, size, perPage, page) => ({
+  url: `https://api.pexels.com/v1/search?query=${query}&orientation=${orientation}&size=${size}&per_page=${perPage}&page=${page}`,
+  options: {
+    method: "GET",
+    headers: {
+      Authorization: api_key,
+    },
+  },
+});
