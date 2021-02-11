@@ -15,31 +15,31 @@ const PalavrasChave = () => {
           </div>
           <div className={`palavras ${theme ? "lightColor" : "darkColor"}`}>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Flor rosa </Link>
+              <Link to="/resultados/natureza"> Natureza </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Carros </Link>
+              <Link to="/resultados/carros"> Carros </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Tecnologia </Link>
+              <Link to="/resultados/tecnologia"> Tecnologia </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Banco </Link>
+              <Link to="/resultados/banco"> Banco </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Amor </Link>
+              <Link to="/resultados/amor"> Amor </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Cruz </Link>
+              <Link to="/resultados/cruz"> Cruz </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Futebol </Link>
+              <Link to="/resultados/futebol"> Futebol </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Esportes </Link>
+              <Link to="/resultados/esportes"> Esportes </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to=""> Pessoas </Link>
+              <Link to="/resultados/pessoas"> Pessoas </Link>
             </div>
           </div>
         </div>

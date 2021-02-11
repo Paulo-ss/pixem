@@ -27,7 +27,7 @@ const SearchPhotosResultsGridItem = () => {
   // sua descrição no alt
   const getPhotoDescription = (url) => {
     const description = url
-      .replace("https://www.pexels.com/photo/", "")
+      .replace("https://www.pexels.com/pt-br/foto/", "")
       .replace(/\d/g, "");
     return description;
   };

@@ -47,7 +47,7 @@ const SearchPhotosResults = ({
           {/* Grid com as imagens retornadas no endpoint de SEARCH_PHOTOS */}
           <SearchPhotosResultsGrid totalResults={totalResults} />
           {/* Atribuindo os créditos para o Pexels */}
-          {data.photos.length ? <Pexels /> : ""}
+          {data?.photos.length ? <Pexels /> : ""}
           {/* Os controles da paginação só aparecem se
           a props pagination for true */}
           {pagination && (
