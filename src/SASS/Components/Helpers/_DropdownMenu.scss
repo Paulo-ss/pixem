@@ -4,7 +4,7 @@
   right: 0;
   padding: 1.2rem 0;
   @include boxShadow;
-  z-index: 1000;
+  z-index: 2000;
   animation: keyShowFromTop 0.2s ease-in forwards;
 
   li + li {

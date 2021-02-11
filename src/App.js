@@ -7,6 +7,7 @@ import Header from "./Components/Header/Header";
 import GoToTopBtn from "./Components/Helpers/GoToTopBtn";
 import Home from "./Components/Home/Home";
 import ScrollToTop from "./Components/Helpers/ScrollToTop";
+import SearchResults from "./Components/SearchResults/SearchResults";
 // Importando o CSS gerado pelo SASS com todo
 // o estilo utilizado no site
 import "./CSS/style.min.css";
@@ -25,6 +26,8 @@ function App() {
           <Route path="curated" element={<PhotosCuratedPage />} />
           {/* Página da foto específica */}
           <Route path="foto/:photoId/:query" element={<GetPhoto />} />
+          {/* Página com os resultados da pesquisa */}
+          <Route path="resultados/:query" element={<SearchResults />} />
         </Routes>
         {/* Botão da o scroll para o topo da página */}
         <GoToTopBtn />

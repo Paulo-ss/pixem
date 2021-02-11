@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 // componente com os resultados da busca, o
 // SearchResults.jsx, deve trazer resultados
 // do endpoint de fotos ou de vídeos. Esse estado
-// é controlado pelo select no input de search
+// é controlado pelos filtros no próprio componente
+// de SearchResult.jsx
 const slice = createSlice({
   name: "search",
   initialState: {

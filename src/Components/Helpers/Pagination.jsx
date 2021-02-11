@@ -4,9 +4,8 @@ import Input from "../Inputs/Input";
 // Importando os SVGs das setas
 import { ReactComponent as PrevIcon } from "../../Assets/prev.svg";
 import { ReactComponent as NextIcon } from "../../Assets/next.svg";
-import { changePage } from "../../Store/Reducers/curated.reducer";
 
-const Pagination = ({ reducer }) => {
+const Pagination = ({ reducer, changePage }) => {
   // Página atual
   const { perPage, page, data } = useSelector((state) => state[reducer]);
   // Dispatch
@@ -14,7 +13,7 @@ const Pagination = ({ reducer }) => {
   // Número total de resultados
   const totalResults = data?.total_results;
   // Número total de páginas
-  const totalPages = Math.floor(totalResults / perPage);
+  const totalPages = Math.ceil(totalResults / perPage);
   // Estado do input
   const [pageInput, setPageInput] = React.useState(page);
 
@@ -55,40 +54,45 @@ const Pagination = ({ reducer }) => {
   };
 
   return (
-    <div className="paginacao">
-      <div className="paginationControls">
-        <button
-          type="button"
-          className="prevPage"
-          style={{ display: `${page === 1 ? "none" : "flex"}` }}
-          onClick={prevPage}
-        >
-          <PrevIcon />
-          Anterior
-        </button>
-        <div className="totalPages">
-          <form onSubmit={goToPage}>
-            <Input
-              value={pageInput}
-              onChange={({ target }) => setPageInput(target.value)}
-              type="text"
-              className="pageInput"
-              id="pageInput"
-            />
-          </form>
-          <p className="total"> de {totalPages} </p>
+    <>
+      {data?.total_results === 0 ? null : (
+        <div className="paginacao">
+          <div className="paginationControls">
+            <button
+              type="button"
+              className="prevPage"
+              style={{ display: `${page === 1 ? "none" : "flex"}` }}
+              onClick={prevPage}
+            >
+              <PrevIcon />
+              Anterior
+            </button>
+            <div className="totalPages">
+              <form onSubmit={goToPage}>
+                <Input
+                  value={pageInput}
+                  onChange={({ target }) => setPageInput(target.value)}
+                  type="text"
+                  className="pageInput"
+                  id="pageInput"
+                  autoComplete="off"
+                />
+              </form>
+              <p className="total"> de {totalPages} </p>
+            </div>
+            <button
+              type="button"
+              className="nextPage"
+              style={{ display: `${page === totalPages ? "none" : "flex"}` }}
+              onClick={nextPage}
+            >
+              Próxima
+              <NextIcon />
+            </button>
+          </div>
         </div>
-        <button
-          type="button"
-          className="nextPage"
-          style={{ display: `${page === totalPages ? "none" : "flex"}` }}
-          onClick={nextPage}
-        >
-          Próxima
-          <NextIcon />
-        </button>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

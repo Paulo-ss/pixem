@@ -4,6 +4,7 @@ import Input from "../Inputs/Input";
 import { ReactComponent as SerchBlack } from "../../Assets/searchBlack.svg";
 import { ReactComponent as SearchWhite } from "../../Assets/searchWhite.svg";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Search = ({ className }) => {
   // Estado do campo de pesquisa
@@ -11,6 +12,9 @@ const Search = ({ className }) => {
   // Acessando o estado do tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
   const element = React.useRef(null);
+
+  // Navigate
+  const navigate = useNavigate();
 
   // Lógica para quando o input for sair da tela,
   // ele gruda no topo da página
@@ -47,8 +51,22 @@ const Search = ({ className }) => {
     };
   }, []);
 
+  // Quando o formulário é enviado, a navegação pra página de resultados
+  // ocorre passando o value do input como parâmetro na url
+  const submitSearchQuery = (e) => {
+    e.preventDefault();
+
+    if (searchQuery.length !== 0) {
+      navigate(`/resultados/${searchQuery}`);
+    }
+  };
+
   return (
-    <form ref={element} className={`searchForm ${className ? className : ""}`}>
+    <form
+      onSubmit={submitSearchQuery}
+      ref={element}
+      className={`searchForm ${className ? className : ""}`}
+    >
       <Input
         value={searchQuery}
         onChange={({ target }) => setSearchQuery(target.value)}

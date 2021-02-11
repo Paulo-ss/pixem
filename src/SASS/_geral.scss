@@ -173,3 +173,14 @@ a {
 .subtitle {
   @include font(24, 400);
 }
+
+// Estilo para quando nenhum resultado é encontrado na busca
+.noResultsFound {
+  grid-column: span 4;
+  justify-self: center;
+  align-self: center;
+
+  p {
+    @include font(20, 400);
+  }
+}

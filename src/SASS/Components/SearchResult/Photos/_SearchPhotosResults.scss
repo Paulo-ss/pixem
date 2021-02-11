@@ -5,4 +5,18 @@
   &.shapeDividerGutter {
     padding-top: $shapeDividerGutter;
   }
+
+  .subText {
+    @include font(20, 400);
+    max-width: 600px;
+    margin-bottom: 2rem;
+
+    @include responsive(small) {
+      font-size: 1.1rem;
+    }
+
+    @include responsive(extraSmall) {
+      font-size: 1.1rem;
+    }
+  }
 }
