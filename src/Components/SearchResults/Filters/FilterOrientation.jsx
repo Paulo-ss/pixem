@@ -10,6 +10,7 @@ const FilterOrientation = ({
   reducer,
   filterOrientation,
   resetOrientation,
+  resetPage,
 }) => {
   // Estado do filtro de orientação
   const { orientation } = useSelector((state) => state[reducer]);
@@ -19,6 +20,9 @@ const FilterOrientation = ({
   // Quando um radio é selecionado, o estado troca
   // e um dispatch é feito com o valor do radio
   const changeFilter = ({ target }) => {
+    // Sempre que um filtro é aplicado,
+    // a pagina reseta para a primeria
+    dispatch(resetPage());
     // Trocando o estado do reducer o que faz com
     // que os resultados da busca troquem
     dispatch(filterOrientation(target.value));
@@ -26,6 +30,9 @@ const FilterOrientation = ({
 
   // Função que limpa o filtro
   const cleanFilter = () => {
+    // Sempre que os filtros são removidos,
+    // a página reseta para a primeira
+    dispatch(resetPage());
     dispatch(resetOrientation());
   };
 

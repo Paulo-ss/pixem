@@ -15,31 +15,31 @@ const PalavrasChave = () => {
           </div>
           <div className={`palavras ${theme ? "lightColor" : "darkColor"}`}>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/natureza"> Natureza </Link>
+              <Link to="/resultados/natureza"> natureza </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/carros"> Carros </Link>
+              <Link to="/resultados/carros"> carros </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/tecnologia"> Tecnologia </Link>
+              <Link to="/resultados/tecnologia"> tecnologia </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/banco"> Banco </Link>
+              <Link to="/resultados/banco"> banco </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/amor"> Amor </Link>
+              <Link to="/resultados/amor"> amor </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/cruz"> Cruz </Link>
+              <Link to="/resultados/cruz"> cruz </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/futebol"> Futebol </Link>
+              <Link to="/resultados/futebol"> futebol </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/esportes"> Esportes </Link>
+              <Link to="/resultados/esportes"> esportes </Link>
             </div>
             <div className={`palavra ${theme ? "darkTwoBg" : "lightTwoBg"}`}>
-              <Link to="/resultados/pessoas"> Pessoas </Link>
+              <Link to="/resultados/pessoas"> pessoas </Link>
             </div>
           </div>
         </div>

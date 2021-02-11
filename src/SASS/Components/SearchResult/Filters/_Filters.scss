@@ -52,7 +52,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #d84f4f;
+      background: $red;
       padding: 0.5rem;
       border: none;
       outline: none;
@@ -62,7 +62,7 @@
 
       &:hover,
       &:focus {
-        background: #a12d2d;
+        background: $redDarker;
       }
 
       svg {

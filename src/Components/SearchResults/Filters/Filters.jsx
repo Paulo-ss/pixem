@@ -10,6 +10,7 @@ const Filters = ({
   filterSize,
   resetOrientation,
   resetSize,
+  resetPage,
 }) => {
   // dispatch
   const dispatch = useDispatch();
@@ -20,8 +21,9 @@ const Filters = ({
     return () => {
       dispatch(resetOrientation());
       dispatch(resetSize());
+      dispatch(resetPage());
     };
-  }, [dispatch, resetOrientation, resetSize]);
+  }, [dispatch, resetOrientation, resetSize, resetPage]);
 
   return (
     <div className={`filters`}>
@@ -30,11 +32,13 @@ const Filters = ({
         reducer={reducer}
         filterOrientation={filterOrientation}
         resetOrientation={resetOrientation}
+        resetPage={resetPage}
       />
       <FilterSize
         reducer={reducer}
         filterSize={filterSize}
         resetSize={resetSize}
+        resetPage={resetPage}
       />
     </div>
   );

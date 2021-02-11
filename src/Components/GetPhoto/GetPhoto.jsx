@@ -22,7 +22,7 @@ const GetPhoto = () => {
       SEARCH_PHOTOS. Nesse caso, a query de busca vem da
       descrição retirada da url da imagem selecionada para
       pesquisar por imagens similares */}
-      <SearchPhotosResults shape={true} title="Imagens similares" />
+      <SearchPhotosResults shape={true} title="Imagens relacionadas" />
     </section>
   );
 };

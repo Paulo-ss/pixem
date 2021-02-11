@@ -6,7 +6,7 @@ import { ReactComponent as MediumFileIcon } from "../../../Assets/mediumFile.svg
 import { ReactComponent as SmallFileIcon } from "../../../Assets/smallFile.svg";
 import { ReactComponent as CloseIcon } from "../../../Assets/closeX.svg";
 
-const FilterSize = ({ reducer, filterSize, resetSize }) => {
+const FilterSize = ({ reducer, filterSize, resetSize, resetPage }) => {
   // Estado do filtro de size
   const { size } = useSelector((state) => state[reducer]);
   // Dispatch
@@ -15,6 +15,10 @@ const FilterSize = ({ reducer, filterSize, resetSize }) => {
   // Quando um radio é selecionado, o estado troca
   // e um dispatch é feito com o valor do radio
   const changeFilter = ({ target }) => {
+    // Sempre que um filtro é aplicado,
+    // a pagina reseta para a primeria
+    dispatch(resetPage());
+
     // Trocando o estado do reducer o que faz com
     // que os resultados da busca troquem
     dispatch(filterSize(target.value));
@@ -22,6 +26,10 @@ const FilterSize = ({ reducer, filterSize, resetSize }) => {
 
   // Função que limpa o filtro
   const cleanFilter = () => {
+    // Sempre que os filtros são removidos,
+    // a página reseta para a primeira
+    dispatch(resetPage());
+
     dispatch(resetSize());
   };
 
@@ -40,7 +48,7 @@ const FilterSize = ({ reducer, filterSize, resetSize }) => {
           <input
             type="radio"
             id="searchForPhotos"
-            name="filterOrientation"
+            name="filterSize"
             value="large"
             checked={size === "large"}
             onChange={changeFilter}
@@ -54,7 +62,7 @@ const FilterSize = ({ reducer, filterSize, resetSize }) => {
           <input
             type="radio"
             id="searchForVideos"
-            name="filterOrientation"
+            name="filterSize"
             value="medium"
             checked={size === "medium"}
             onChange={changeFilter}
@@ -68,7 +76,7 @@ const FilterSize = ({ reducer, filterSize, resetSize }) => {
           <input
             type="radio"
             id="searchForVideos"
-            name="filterOrientation"
+            name="filterSize"
             value="small"
             checked={size === "small"}
             onChange={changeFilter}

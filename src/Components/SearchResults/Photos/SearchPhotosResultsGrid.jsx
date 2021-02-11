@@ -5,12 +5,19 @@ import SearchPhotosResultsGridItem from "./SearchPhotosResultsGridItem";
 import { searchForPhotos } from "../../../Store/Reducers/searchPhotos.reducer";
 import TotalResults from "../../Helpers/TotalResults";
 import { useParams } from "react-router-dom";
+import Error from "../../Helpers/Error";
 
 const SearchPhotosResultsGrid = ({ totalResults }) => {
   // Estado do resultados da pesquisa de fotos
-  const { loading, data, orientation, size, perPage, page } = useSelector(
-    (state) => state.searchPhotos
-  );
+  const {
+    loading,
+    data,
+    error,
+    orientation,
+    size,
+    perPage,
+    page,
+  } = useSelector((state) => state.searchPhotos);
 
   // Dispatch
   const dispatch = useDispatch();
@@ -32,6 +39,7 @@ const SearchPhotosResultsGrid = ({ totalResults }) => {
     dispatch(searchForPhotos({ query, orientation, size, perPage, page }));
   }, [dispatch, orientation, size, perPage, page, paramQuery]);
 
+  if (error) return <Error error={error} />;
   return (
     <>
       {/* Componente helper para mostrar a quantidade total

@@ -17,6 +17,13 @@ const Pagination = ({ reducer, changePage }) => {
   // Estado do input
   const [pageInput, setPageInput] = React.useState(page);
 
+  // Sempre que a página mudar, o valor do
+  // input é setado para ser igual ao da
+  // página atual
+  React.useEffect(() => {
+    setPageInput(page);
+  }, [page]);
+
   // Função que faz o scroll pro topo
   // quando a página é trocada
   const goToTop = () => {
