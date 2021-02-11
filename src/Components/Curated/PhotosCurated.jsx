@@ -4,7 +4,7 @@ import Pexels from "../Helpers/Pexels";
 import SeeMoreBtn from "./SeeMoreBtn";
 import ShapeDivider from "../Helpers/ShapeDivider";
 import PhotosCuratedGrid from "./PhotosCuratedGrid";
-import Pagination from "./Pagination";
+import Pagination from "../Helpers/Pagination";
 
 const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
   // Tema atual do site
@@ -66,7 +66,9 @@ const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
     >
       {/* Shape divider entre as sections, só aparece se a
       prop shape for true */}
-      {shape && <ShapeDivider />}
+      {shape && (
+        <ShapeDivider lightCSSclass="lightTwoFill" darkCSSclass="darkTwoFill" />
+      )}
       <div className="container">
         <div className="wrapper" ref={element}>
           <div className="title">

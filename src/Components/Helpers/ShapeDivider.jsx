@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 // verificar o tamamho da tela
 import useMedia from "../../Hooks/useMedia";
 
-const ShapeDivider = () => {
+const ShapeDivider = ({ lightCSSclass, darkCSSclass }) => {
   // Tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
 
@@ -24,7 +24,7 @@ const ShapeDivider = () => {
           >
             <path
               d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
-              className={`${theme ? "darkTwoFill" : "lightTwoFill"}`}
+              className={`${theme ? darkCSSclass : lightCSSclass}`}
             ></path>
           </svg>
         </div>

@@ -14,21 +14,20 @@ const Pagination = ({ reducer }) => {
   // Número total de resultados
   const totalResults = data?.total_results;
   // Número total de páginas
-  const totalPages = Math.ceil(totalResults / perPage);
+  const totalPages = Math.floor(totalResults / perPage);
   // Estado do input
   const [pageInput, setPageInput] = React.useState(page);
 
   // Função que faz o scroll pro topo
   // quando a página é trocada
   const goToTop = () => {
-    document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.body.scrollIntoView({ behavior: "auto", block: "start" });
   };
 
   // Função que vai para a página anterior do botão prev page
   const prevPage = () => {
-    goToTop();
-
     if (page > 1) {
+      goToTop();
       dispatch(changePage(page - 1));
       setPageInput(page - 1);
     }
@@ -36,9 +35,8 @@ const Pagination = ({ reducer }) => {
 
   // Função que vai para a próxima página do botão next page
   const nextPage = () => {
-    goToTop();
-
     if (page < totalPages) {
+      goToTop();
       dispatch(changePage(page + 1));
       setPageInput(page + 1);
     }
@@ -50,7 +48,7 @@ const Pagination = ({ reducer }) => {
 
     if (pageInput > 0 && pageInput <= totalPages) {
       goToTop();
-      dispatch(changePage(pageInput));
+      dispatch(changePage(+pageInput));
     } else {
       window.alert(`Por favor, digite um valor entre 1 e ${totalPages}`);
     }
@@ -59,7 +57,12 @@ const Pagination = ({ reducer }) => {
   return (
     <div className="paginacao">
       <div className="paginationControls">
-        <button type="button" className="prevPage" onClick={prevPage}>
+        <button
+          type="button"
+          className="prevPage"
+          style={{ display: `${page === 1 ? "none" : "flex"}` }}
+          onClick={prevPage}
+        >
           <PrevIcon />
           Anterior
         </button>
@@ -75,7 +78,12 @@ const Pagination = ({ reducer }) => {
           </form>
           <p className="total"> de {totalPages} </p>
         </div>
-        <button type="button" className="nextPage" onClick={nextPage}>
+        <button
+          type="button"
+          className="nextPage"
+          style={{ display: `${page === totalPages ? "none" : "flex"}` }}
+          onClick={nextPage}
+        >
           Próxima
           <NextIcon />
         </button>

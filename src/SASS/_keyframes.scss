@@ -67,3 +67,15 @@
     }
   }
 }
+
+// Animação de spinner para o loading
+@mixin spinner {
+  @keyframes keySpinner {
+    from {
+      transform: rotate(-360deg);
+    }
+    to {
+      transform: rotate(0);
+    }
+  }
+}
