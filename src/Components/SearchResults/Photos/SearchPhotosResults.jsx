@@ -6,10 +6,18 @@ import ShapeDivider from "../../Helpers/ShapeDivider";
 import SearchPhotosResultsGrid from "./SearchPhotosResultsGrid";
 import { changePage } from "../../../Store/Reducers/searchPhotos.reducer";
 import { useParams } from "react-router-dom";
+import Filters from "../Filters/Filters";
+import {
+  filterOrientation,
+  filterSize,
+  resetOrientation,
+  resetSize,
+} from "../../../Store/Reducers/searchPhotos.reducer";
 
 const SearchPhotosResults = ({
   shape,
   title,
+  filters,
   pagination,
   totalResults,
   subText,
@@ -43,6 +51,16 @@ const SearchPhotosResults = ({
               {" "}
               Mostrando resultados para "{cleandQuery}"{" "}
             </p>
+          )}
+          {/* Filtros para refinar a pesquisa */}
+          {filters && (
+            <Filters
+              reducer="searchPhotos"
+              filterOrientation={filterOrientation}
+              filterSize={filterSize}
+              resetOrientation={resetOrientation}
+              resetSize={resetSize}
+            />
           )}
           {/* Grid com as imagens retornadas no endpoint de SEARCH_PHOTOS */}
           <SearchPhotosResultsGrid totalResults={totalResults} />

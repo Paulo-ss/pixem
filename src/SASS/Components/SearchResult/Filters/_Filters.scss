@@ -1,0 +1,137 @@
+.filters {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  @include responsive(medium) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include responsive(small) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include responsive(extraSmall) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter + .filter {
+    margin-left: 2rem;
+
+    @include responsive(medium) {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+
+    @include responsive(small) {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+
+    @include responsive(extraSmall) {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .filterTitle {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      @include font(20, 400);
+      margin-right: 0.8rem;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #d84f4f;
+      padding: 0.5rem;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:hover,
+      &:focus {
+        background: #a12d2d;
+      }
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  .filterRadios {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .radioLabel {
+      position: relative;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      input:checked + .radioDisplay {
+        border-color: $primaryDarker;
+        color: $lightTwo;
+        transform: scale(1);
+      }
+
+      input:checked + .radioDisplay svg {
+        fill: $lightTwo;
+      }
+
+      .radioDisplay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $primaryColor;
+        border: 4px solid transparent;
+        border-radius: 5px;
+        padding: 0.8rem;
+        color: $dark;
+        cursor: pointer;
+        transform: scale(0.9);
+        transition: all 0.2s ease-out;
+
+        &:hover {
+          background: darken($color: #76a4d7, $amount: 10%);
+        }
+
+        svg {
+          width: 30px;
+          height: 30px;
+          margin-right: 1rem;
+          transition: all 0.2s ease-out;
+        }
+      }
+    }
+
+    .radioLabel + .radioLabel {
+      margin-left: 1rem;
+
+      @include responsive(small) {
+        margin-left: 0.5rem;
+      }
+
+      @include responsive(extraSmall) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
