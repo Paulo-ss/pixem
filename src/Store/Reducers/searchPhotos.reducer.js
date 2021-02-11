@@ -14,13 +14,13 @@ const searchPhotos = createAsyncSlice({
       state.orientation = action.payload;
     },
     filterSize(state, action) {
-      state.orientation = action.payload;
+      state.size = action.payload;
     },
     changePerPage(state, action) {
-      state.orientation = action.payload;
+      state.perPage = action.payload;
     },
     changePage(state, action) {
-      state.orientation = action.payload;
+      state.page = action.payload;
     },
   },
   fetchConfig: ({ query, orientation, size, perPage, page }) =>

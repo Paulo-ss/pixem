@@ -32,6 +32,13 @@ const SearchPhotosResultsGridItem = () => {
     return description;
   };
 
+  if (data?.total_results === 0) {
+    return (
+      <div className="noResultsFound">
+        <p> Nenhum resultado foi encontrado </p>
+      </div>
+    );
+  }
   return (
     <>
       {data &&

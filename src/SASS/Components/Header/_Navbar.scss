@@ -22,14 +22,21 @@
   top: 120%;
   right: 0;
   @include boxShadow;
-  z-index: 1000;
+  z-index: 1800;
 
   .navbarNav {
     flex-direction: column;
     align-items: flex-end;
 
+    li {
+      width: 100%;
+      text-align: right;
+    }
+
     li:nth-child(3) {
       padding: 1rem 1rem;
+      display: flex;
+      justify-content: flex-end;
     }
 
     a {

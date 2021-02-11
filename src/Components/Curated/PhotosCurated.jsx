@@ -5,6 +5,7 @@ import SeeMoreBtn from "./SeeMoreBtn";
 import ShapeDivider from "../Helpers/ShapeDivider";
 import PhotosCuratedGrid from "./PhotosCuratedGrid";
 import Pagination from "../Helpers/Pagination";
+import { changePage } from "../../Store/Reducers/curated.reducer";
 
 const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
   // Tema atual do site
@@ -83,7 +84,9 @@ const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
           só aparece se a prop de seeMore for true */}
           {seeMore && <SeeMoreBtn path="/curated" text="Ver mais" />}
           {/* Páginação */}
-          {pagination && <Pagination reducer="curated" />}
+          {pagination && (
+            <Pagination reducer="curated" changePage={changePage} />
+          )}
         </div>
       </div>
     </section>

@@ -7,6 +7,20 @@
   margin: 13rem auto 0 auto;
   transition: all 0.2s ease-in;
 
+  @include responsive(medium) {
+    margin: 13rem 1.5rem 0 1.5rem;
+  }
+
+  @include responsive(small) {
+    top: 1px;
+    margin: 0;
+  }
+
+  @include responsive(extraSmall) {
+    top: 1px;
+    margin: 0;
+  }
+
   // Classe sticky que gruda o input no topo
   // ao dar scroll para baixo na página
   &.sticky {
@@ -23,18 +37,15 @@
     }
   }
 
-  @include responsive(medium) {
-    margin: 13rem 1.5rem 0 1.5rem;
-  }
-
-  @include responsive(small) {
-    top: 1px;
+  // Classe recebida como props pelo componente
+  // search, que serve para deixar o input com
+  // o tamanho de 100% da tela quanto estiver
+  // fora da home
+  &.fullWindowSize {
+    max-width: 100%;
     margin: 0;
-  }
-
-  @include responsive(extraSmall) {
-    top: 1px;
-    margin: 0;
+    @include boxShadow;
+    z-index: 1000;
   }
 
   .searchInput {
@@ -94,13 +105,4 @@
       width: 40px;
     }
   }
-}
-
-// Classe recebida como props pelo componente
-// search, que serve para deixar o input com
-// o tamanho de 100% da tela quanto estiver
-// fora da home
-.searchForm.fullWindowSize {
-  max-width: 100%;
-  margin: 0;
 }

@@ -22,7 +22,6 @@ const SearchPhotosResultsGrid = ({ totalResults }) => {
 
   // Pegando a query de busca da url
   const { query: paramQuery } = useParams();
-  console.log(paramQuery);
 
   // Fazendo a requisição no endpoint de search photos
   React.useEffect(() => {
