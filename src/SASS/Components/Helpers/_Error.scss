@@ -1,0 +1,16 @@
+.error {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: $red;
+  border-left: 4px solid $redDarker;
+  color: $light;
+
+  h3 {
+    @include font(24, 400);
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    @include font(20, 200);
+  }
+}

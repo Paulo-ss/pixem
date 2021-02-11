@@ -12,6 +12,7 @@ import {
   filterSize,
   resetOrientation,
   resetSize,
+  resetPage,
 } from "../../../Store/Reducers/searchPhotos.reducer";
 
 const SearchPhotosResults = ({
@@ -60,6 +61,7 @@ const SearchPhotosResults = ({
               filterSize={filterSize}
               resetOrientation={resetOrientation}
               resetSize={resetSize}
+              resetPage={resetPage}
             />
           )}
           {/* Grid com as imagens retornadas no endpoint de SEARCH_PHOTOS */}

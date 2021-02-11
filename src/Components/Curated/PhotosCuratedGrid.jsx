@@ -4,10 +4,11 @@ import PhotosCuratedGridItem from "./PhotosCuratedGridItem";
 import LoadingGrid from "../Helpers/LoadingGrid";
 import { getCuratedPhotos } from "../../Store/Reducers/curated.reducer";
 import TotalResults from "../Helpers/TotalResults";
+import Error from "../Helpers/Error";
 
 const PhotosGrid = () => {
   // Loading das fotos curated
-  const { loading, perPage, page, data } = useSelector(
+  const { error, loading, perPage, page, data } = useSelector(
     (state) => state.curated
   );
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const PhotosGrid = () => {
     dispatch(getCuratedPhotos({ perPage, page }));
   }, [dispatch, perPage, page]);
 
+  if (error) return <Error error={error} />;
   return (
     <>
       {/* Componente helper para mostrar a quantidade total

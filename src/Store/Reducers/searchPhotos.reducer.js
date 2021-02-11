@@ -28,6 +28,9 @@ const searchPhotos = createAsyncSlice({
     resetSize(state) {
       state.size = "";
     },
+    resetPage(state) {
+      state.page = 1;
+    },
   },
   fetchConfig: ({ query, orientation, size, perPage, page }) =>
     SEARCH_PHOTOS(query, orientation, size, perPage, page),
@@ -41,5 +44,6 @@ export const {
   changePage,
   resetOrientation,
   resetSize,
+  resetPage,
 } = searchPhotos.actions;
 export default searchPhotos.reducer;

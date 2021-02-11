@@ -29,7 +29,7 @@ function App() {
           {/* Página com os resultados da pesquisa */}
           <Route path="resultados/:query" element={<SearchResults />} />
         </Routes>
-        {/* Botão da o scroll para o topo da página */}
+        {/* Botão que faz o scroll para o topo da página */}
         <GoToTopBtn />
         {/* Rodapé do site */}
         <Footer />
