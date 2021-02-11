@@ -26,7 +26,7 @@ export const GET_PHOTO = (photoId) => ({
 
 // Endpoint dos resultados de busca para fotos
 export const SEARCH_PHOTOS = (query, orientation, size, perPage, page) => ({
-  url: `https://api.pexels.com/v1/search?query=${query}&orientation=${orientation}&size=${size}&per_page=${perPage}&page=${page}`,
+  url: `https://api.pexels.com/v1/search?query=${query}&orientation=${orientation}&size=${size}&per_page=${perPage}&page=${page}&locale=pt-BR`,
   options: {
     method: "GET",
     headers: {
