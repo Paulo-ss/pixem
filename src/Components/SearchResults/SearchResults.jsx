@@ -17,6 +17,7 @@ const SearchResults = () => {
       {searchFor === "photos" ? (
         <SearchPhotosResults
           title="Resultados encontrados"
+          filters={true}
           pagination={true}
           totalResults={true}
           subText={true}
