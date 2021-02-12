@@ -144,7 +144,9 @@ a {
   max-width: 650px;
 
   h1 {
+    position: relative;
     @include font(30, 200);
+    margin-bottom: -1rem;
 
     @include responsive(small) {
       font-size: 1.8rem;
@@ -166,7 +168,9 @@ a {
   }
 
   p {
-    @include font(24, 200);
+    @include font(20, 400);
+    margin: 1rem 0 1.5rem 0;
+    max-width: 500px;
   }
 }
 

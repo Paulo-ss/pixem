@@ -10,6 +10,7 @@ import search from "./Reducers/search.reducer";
 import curated from "./Reducers/curated.reducer";
 import photo from "./Reducers/photo.reducer";
 import searchPhotos from "./Reducers/searchPhotos.reducer";
+import popularVideos from "./Reducers/popularVideos.reducer";
 
 // Importando os middlewares
 import localStorage from "./Middlewares/localStorage";
@@ -23,6 +24,7 @@ const reducer = combineReducers({
   curated,
   photo,
   searchPhotos,
+  popularVideos,
 });
 // Configurando a store
 const store = configureStore({ reducer, middleware });

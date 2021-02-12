@@ -1,6 +1,5 @@
 import React from "react";
 import PhotosCurated from "../Curated/PhotosCurated";
-import Videos from "../VideosGrid/Videos";
 import Features from "./Features";
 import Jumbotron from "./Jumbotron";
 import PalavrasChave from "./PalavrasChave";
@@ -16,7 +15,6 @@ const Home = () => {
       <Features />
       {/* Section com as fotos do endpoint curated */}
       <PhotosCurated shape={true} seeMore={true} />
-      <Videos />
     </section>
   );
 };

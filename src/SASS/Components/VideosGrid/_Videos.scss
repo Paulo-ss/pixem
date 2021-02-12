@@ -1,12 +1,10 @@
 .videos {
   position: relative;
-  padding: $gutter 0;
 
   .videosGrid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, minmax(220px, 1fr));
-    grid-template-rows: repeat(auto-fit, 180px);
     grid-auto-flow: dense;
     gap: 1rem;
 
