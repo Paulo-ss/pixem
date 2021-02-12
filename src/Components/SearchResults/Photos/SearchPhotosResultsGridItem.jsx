@@ -2,24 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ReactComponent as CameraIcon } from "../../../Assets/camera.svg";
+import useMedia from "../../../Hooks/useMedia";
 
 const SearchPhotosResultsGridItem = () => {
   const { data } = useSelector((state) => state.searchPhotos);
+
+  const matchMedia = useMedia("(min-width: 550px)");
 
   // Função que define o span de column e row
   // que cada imagem deve ocupar no grid baseado
   // no seu tamanho
   const getSpanEstimate = (width, height) => {
-    if (width > height) {
-      return {
-        gridColumnEnd: `span 2`,
-        gridRowEnd: `span 1`,
-      };
-    } else {
-      return {
-        gridColumnEnd: `span 1`,
-        gridRowEnd: `span 2`,
-      };
+    if (matchMedia) {
+      if (width > height) {
+        return {
+          gridColumnEnd: `span 2`,
+          gridRowEnd: `span 1`,
+        };
+      } else {
+        return {
+          gridColumnEnd: `span 1`,
+          gridRowEnd: `span 2`,
+        };
+      }
     }
   };
 
