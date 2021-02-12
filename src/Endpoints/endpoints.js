@@ -34,3 +34,14 @@ export const SEARCH_PHOTOS = (query, orientation, size, perPage, page) => ({
     },
   },
 });
+
+// Endpoint dos vídeos populares
+export const POPULAR_VIDEOS = (perPage, page) => ({
+  url: `https://api.pexels.com/videos/popular?per_page=${perPage}&page=${page}`,
+  options: {
+    method: "GET",
+    headers: {
+      Authorization: api_key,
+    },
+  },
+});

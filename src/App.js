@@ -11,6 +11,7 @@ import SearchResults from "./Components/SearchResults/SearchResults";
 // Importando o CSS gerado pelo SASS com todo
 // o estilo utilizado no site
 import "./CSS/style.min.css";
+import PopularVideos from "./Components/PopularVideos/PopularVideos";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* Página com as fotos curated */}
           <Route path="curated" element={<PhotosCuratedPage />} />
+          {/* Páginas dos vídeos populares */}
+          <Route path="videos-populares" element={<PopularVideos />} />
           {/* Página da foto específica */}
           <Route path="foto/:photoId/:query" element={<GetPhoto />} />
           {/* Página com os resultados da pesquisa */}
