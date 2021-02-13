@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Search from "../Search/Search";
 import SearchPhotosResults from "./Photos/SearchPhotosResults";
+import SearchVideosResults from "./Videos/SearchVideosResults";
 
 const SearchResults = () => {
   // Tema atual do site
@@ -22,7 +23,9 @@ const SearchResults = () => {
           totalResults={true}
           subText={true}
         />
-      ) : null}
+      ) : (
+        <SearchVideosResults />
+      )}
     </>
   );
 };

@@ -54,6 +54,13 @@ const VideosGridItem = ({ reducer }) => {
     videoPlayer.pause();
   };
 
+  if (data?.total_results === 0) {
+    return (
+      <div className="noResultsFound">
+        <p> Nenhum resultado foi encontrado </p>
+      </div>
+    );
+  }
   return (
     <>
       {data &&
