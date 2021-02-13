@@ -1,10 +1,11 @@
-import { SEARCH_PHOTOS } from "../../Endpoints/endpoints";
+import { SEARCH_VIDEOS } from "../../Endpoints/endpoints";
 import createAsyncSlice from "../Helpers/createAsyncSlice";
 
-const searchPhotos = createAsyncSlice({
-  name: "searchPhotos",
+const searchVideos = createAsyncSlice({
+  name: "searchVideos",
   initialState: {
     asyncActionArgs: {
+      query: "",
       orientation: "",
       size: "",
       perPage: 20,
@@ -12,6 +13,9 @@ const searchPhotos = createAsyncSlice({
     },
   },
   reducers: {
+    setQuery(state, action) {
+      state.asyncActionArgs.query = action.payload;
+    },
     filterOrientation(state, action) {
       state.asyncActionArgs.orientation = action.payload;
     },
@@ -35,11 +39,12 @@ const searchPhotos = createAsyncSlice({
     },
   },
   fetchConfig: ({ query, orientation, size, perPage, page }) =>
-    SEARCH_PHOTOS(query, orientation, size, perPage, page),
+    SEARCH_VIDEOS(query, orientation, size, perPage, page),
 });
 
-export const { asyncAction: searchForPhotos } = searchPhotos;
+export const { asyncAction: searchForVideos } = searchVideos;
 export const {
+  setQuery,
   filterOrientation,
   filterSize,
   changePerPage,
@@ -47,5 +52,5 @@ export const {
   resetOrientation,
   resetSize,
   resetPage,
-} = searchPhotos.actions;
-export default searchPhotos.reducer;
+} = searchVideos.actions;
+export default searchVideos.reducer;

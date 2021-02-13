@@ -1,0 +1,102 @@
+.videoContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @include responsive(small) {
+    grid-template-columns: 1fr;
+  }
+
+  @include responsive(extraSmall) {
+    grid-template-columns: 1fr;
+  }
+
+  .video {
+    position: relative;
+
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .videoDetails {
+    padding: 1.5rem;
+    opacity: 0;
+    animation: keyShowFromTop 0.3s ease-out forwards;
+
+    @include responsive(medium) {
+      padding: 0;
+    }
+
+    @include responsive(small) {
+      padding: 0;
+    }
+
+    @include responsive(extraSmall) {
+      padding: 0;
+    }
+
+    h3 {
+      @include font(24, 200);
+      margin-bottom: 0.6rem;
+    }
+
+    .photographer {
+      margin-bottom: 3rem;
+
+      & > div {
+        display: flex;
+        align-items: center;
+
+        h3 {
+          margin-top: 1rem;
+        }
+
+        svg {
+          width: 30px;
+          height: 30px;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .resolution {
+      margin-bottom: 3rem;
+    }
+
+    .color {
+      margin-bottom: 3rem;
+
+      span {
+        display: block;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .download {
+      a {
+        position: relative;
+        top: 0;
+        left: 0;
+        @include font(20, 400);
+        color: $darkTwo;
+        background: $pexelsColor;
+        padding: 1.2rem 2rem;
+        box-shadow: 3px 3px $darkThree;
+        transition: all 0.2s ease-in;
+
+        &:hover,
+        &:focus {
+          top: 3px;
+          left: 3px;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@include showFromTop;

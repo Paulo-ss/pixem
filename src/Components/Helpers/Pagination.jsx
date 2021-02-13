@@ -7,7 +7,10 @@ import { ReactComponent as NextIcon } from "../../Assets/next.svg";
 
 const Pagination = ({ reducer, changePage }) => {
   // Página atual
-  const { perPage, page, data } = useSelector((state) => state[reducer]);
+  const { data } = useSelector((state) => state[reducer]);
+  const { perPage, page } = useSelector(
+    (state) => state[reducer].asyncActionArgs
+  );
   // Dispatch
   const dispatch = useDispatch();
   // Número total de resultados

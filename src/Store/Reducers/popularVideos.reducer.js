@@ -4,15 +4,17 @@ import createAsyncSlice from "../Helpers/createAsyncSlice";
 const popularVideos = createAsyncSlice({
   name: "popularVideos",
   initialState: {
-    perPage: 20,
-    page: 1,
+    asyncActionArgs: {
+      perPage: 20,
+      page: 1,
+    },
   },
   reducers: {
     changePerPage(state, action) {
-      state.perPage = action.payload;
+      state.asyncActionArgs.perPage = action.payload;
     },
     changePage(state, action) {
-      state.page = action.payload;
+      state.asyncActionArgs.page = action.payload;
     },
   },
   fetchConfig: ({ perPage, page }) => POPULAR_VIDEOS(perPage, page),

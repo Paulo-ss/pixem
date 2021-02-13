@@ -5,8 +5,7 @@ import LoadingGrid from "../Helpers/LoadingGrid";
 import Error from "../Helpers/Error";
 
 const VideosGrid = ({ reducer, asyncAction }) => {
-  // Estados do reducer passado por props
-  const { loading, error, perPage, page } = useSelector(
+  const { loading, error, asyncActionArgs } = useSelector(
     (state) => state[reducer]
   );
   // dispatch
@@ -14,8 +13,8 @@ const VideosGrid = ({ reducer, asyncAction }) => {
 
   // Fazendo uma requisição através da asyncAction
   React.useEffect(() => {
-    dispatch(asyncAction({ perPage, page }));
-  }, [dispatch, perPage, page, asyncAction]);
+    dispatch(asyncAction({ ...asyncActionArgs }));
+  }, [dispatch, asyncAction, asyncActionArgs]);
 
   if (error) return <Error error={error} />;
   return (

@@ -13,7 +13,9 @@ const FilterOrientation = ({
   resetPage,
 }) => {
   // Estado do filtro de orientação
-  const { orientation } = useSelector((state) => state[reducer]);
+  const { orientation } = useSelector(
+    (state) => state[reducer].asyncActionArgs
+  );
   // Dispatch
   const dispatch = useDispatch();
 
@@ -39,7 +41,7 @@ const FilterOrientation = ({
   return (
     <div className={`filter`}>
       <div className="filterTitle">
-        <h3> Proporção </h3>
+        <h3> Orientação </h3>
         {orientation.length !== 0 && (
           <button className="cleanFilter" onClick={cleanFilter}>
             <CloseIcon />

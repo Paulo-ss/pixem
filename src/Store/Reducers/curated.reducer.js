@@ -4,15 +4,17 @@ import createAsyncSlice from "../Helpers/createAsyncSlice";
 const curated = createAsyncSlice({
   name: "curated",
   initialState: {
-    perPage: 15,
-    page: 1,
+    asyncActionArgs: {
+      perPage: 15,
+      page: 1,
+    },
   },
   reducers: {
     changePerPage(state, action) {
-      state.perPage = action.payload;
+      state.asyncActionArgs.perPage = action.payload;
     },
     changePage(state, action) {
-      state.page = action.payload;
+      state.asyncActionArgs.page = action.payload;
     },
   },
   fetchConfig: ({ perPage, page }) => GET_CURATED_PHOTOS(perPage, page),
