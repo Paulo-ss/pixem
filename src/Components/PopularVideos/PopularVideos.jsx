@@ -7,6 +7,7 @@ import { changePage } from "../../Store/Reducers/popularVideos.reducer";
 import Pagination from "../Helpers/Pagination";
 import { getPopularVideos } from "../../Store/Reducers/popularVideos.reducer";
 import TotalResults from "../Helpers/TotalResults";
+import Head from "../Helpers/Head";
 
 const PopularVideos = () => {
   // Tema atual do site
@@ -18,6 +19,7 @@ const PopularVideos = () => {
   return (
     <>
       <Search className="fullWindowSize" />
+      <Head title="Vídeos populares" content="Vídeos populares do momento" />
       <section
         className={`popularVideos ${
           theme ? "darkTheme darkTwoBg" : "lightTheme lightTwoBg"

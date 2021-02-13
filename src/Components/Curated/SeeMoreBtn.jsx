@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { changePage } from "../../Store/Reducers/curated.reducer";
 
 const SeeMoreBtn = ({ path, text }) => {
-  const { page } = useSelector((state) => state.curated);
+  const { page } = useSelector((state) => state.curated.asyncActionArgs);
   const dispatch = useDispatch();
 
   return (

@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import Head from "../Helpers/Head";
 import Search from "../Search/Search";
 import SearchPhotosResults from "../SearchResults/Photos/SearchPhotosResults";
 import Photo from "./Photo";
@@ -8,10 +10,17 @@ const GetPhoto = () => {
   // Tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
 
+  // Query da URL
+  const { query } = useParams();
+
   return (
     <section
       className={`photo ${theme ? "darkTheme" : "lightTheme lightThreeBg"}`}
     >
+      <Head
+        title={`${query}`}
+        content={`Mostrando a foto ${query} e outras fotos semelhantes a ela`}
+      />
       <Search className="fullWindowSize" />
       <div className="container">
         <div className="photoWrapper">

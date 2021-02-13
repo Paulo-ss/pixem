@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 // Importando os SVG de camera
 import { ReactComponent as CameraWhiteIcon } from "../../Assets/camera.svg";
 import { ReactComponent as CameraDarkIcon } from "../../Assets/cameraDark.svg";
+import Head from "../Helpers/Head";
 
 const PhotoContent = () => {
   // Acessando o estado com os dados da foto
