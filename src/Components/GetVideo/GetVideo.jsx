@@ -10,13 +10,22 @@ import {
 } from "../../Store/Reducers/searchVideos.reducer";
 import Videos from "../VideosGrid/Videos";
 import Pexels from "../Helpers/Pexels";
+import { useParams } from "react-router-dom";
+import Head from "../Helpers/Head";
 
 const GetVideo = () => {
   // Tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
 
+  // Query da URL
+  const { query } = useParams();
+
   return (
     <>
+      <Head
+        title={`${query}`}
+        content={`Mostrando o vídeo ${query} e outros vídeos semelhantes e ele`}
+      />
       {/* Componente helper que pega a query da URL */}
       <GetSearchQuery setQuery={setQuery} />
       {/* Form de pesquisa */}

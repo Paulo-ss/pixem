@@ -3,17 +3,20 @@ import { useSelector } from "react-redux";
 import Search from "../Search/Search";
 import SearchPhotosResults from "./Photos/SearchPhotosResults";
 import SearchVideosResults from "./Videos/SearchVideosResults";
+import { useParams } from "react-router-dom";
+import Head from "../Helpers/Head";
 
 const SearchResults = () => {
-  // Tema atual do site
-  // const { theme } = useSelector((state) => state.userInterface);
-
   // Estado que define se os resultados serão
   // de fotos ou vídeos
   const { searchFor } = useSelector((state) => state.search);
 
+  // Query da URL
+  const { query } = useParams();
+
   return (
     <>
+      <Head title={`${query}`} content={`Mostrando resultados para ${query}`} />
       <Search className="fullWindowSize" />
       {searchFor === "photos" ? (
         <SearchPhotosResults
