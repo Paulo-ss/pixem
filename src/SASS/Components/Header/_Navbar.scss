@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include font(20, 400);
+  @include font(20, 300);
 
   li + li {
     margin-left: 0.5rem;
