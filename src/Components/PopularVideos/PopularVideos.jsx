@@ -12,7 +12,7 @@ const PopularVideos = () => {
   // Tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
 
-  // Loading e data do reducer popularVideos
+  // Estados do reducer popularVideos
   const { loading, data } = useSelector((state) => state.popularVideos);
 
   return (
@@ -33,6 +33,8 @@ const PopularVideos = () => {
           {!loading && data && (
             <TotalResults totalResults={data.total_results} />
           )}
+          {/* Grid com os vídeos retornadas na requisição
+          feita através da asyncAction */}
           <Videos reducer="popularVideos" asyncAction={getPopularVideos} />
           <Pexels />
           <Pagination reducer="popularVideos" changePage={changePage} />

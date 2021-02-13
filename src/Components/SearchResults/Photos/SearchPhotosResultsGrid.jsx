@@ -9,15 +9,9 @@ import Error from "../../Helpers/Error";
 
 const SearchPhotosResultsGrid = ({ totalResults }) => {
   // Estado do resultados da pesquisa de fotos
-  const {
-    loading,
-    data,
-    error,
-    orientation,
-    size,
-    perPage,
-    page,
-  } = useSelector((state) => state.searchPhotos);
+  const { loading, data, error, asyncActionArgs } = useSelector(
+    (state) => state.searchPhotos
+  );
 
   // Dispatch
   const dispatch = useDispatch();
@@ -36,8 +30,8 @@ const SearchPhotosResultsGrid = ({ totalResults }) => {
     // requisição no endpoint de search photos é realizado
     const query = clearQuery(paramQuery);
 
-    dispatch(searchForPhotos({ query, orientation, size, perPage, page }));
-  }, [dispatch, orientation, size, perPage, page, paramQuery]);
+    dispatch(searchForPhotos({ query, ...asyncActionArgs }));
+  }, [dispatch, asyncActionArgs, paramQuery]);
 
   if (error) return <Error error={error} />;
   return (

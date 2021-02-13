@@ -45,3 +45,25 @@ export const POPULAR_VIDEOS = (perPage, page) => ({
     },
   },
 });
+
+// Endpoint dos resultados de busca pra vídeos
+export const SEARCH_VIDEOS = (query, orientation, size, perPage, page) => ({
+  url: `https://api.pexels.com/videos/search?query=${query}&orientation=${orientation}&size=${size}&per_page=${perPage}&page=${page}&locale=pt-BR`,
+  options: {
+    method: "GET",
+    headers: {
+      Authorization: api_key,
+    },
+  },
+});
+
+// Endpoint que retorna um vídeo específico
+export const GET_VIDEO = (videoId) => ({
+  url: `https://api.pexels.com/videos/videos/${videoId}`,
+  options: {
+    method: "GET",
+    headers: {
+      Authorization: api_key,
+    },
+  },
+});

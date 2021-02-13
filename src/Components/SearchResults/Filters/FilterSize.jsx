@@ -8,7 +8,7 @@ import { ReactComponent as CloseIcon } from "../../../Assets/closeX.svg";
 
 const FilterSize = ({ reducer, filterSize, resetSize, resetPage }) => {
   // Estado do filtro de size
-  const { size } = useSelector((state) => state[reducer]);
+  const { size } = useSelector((state) => state[reducer].asyncActionArgs);
   // Dispatch
   const dispatch = useDispatch();
 

@@ -11,7 +11,7 @@ const VideosGridItem = ({ reducer }) => {
   const matchMedia = useMedia("(min-width: 550px)");
 
   // Função que define o span de column e row
-  // que cada imagem deve ocupar no grid baseado
+  // que cada vídeo deve ocupar no grid baseado
   // no seu tamanho
   const getSpanEstimate = (width, height) => {
     if (matchMedia) {
@@ -29,11 +29,12 @@ const VideosGridItem = ({ reducer }) => {
     }
   };
 
-  // Limpando a URL da imagem para colocar a
+  // Limpando a URL do vídeo para colocar a
   // sua descrição no alt
-  const getPhotoDescription = (url) => {
+  const getVideoDescription = (url) => {
     const description = url
       .replace("https://www.pexels.com/video/", "")
+      .replace("https://www.pexels.com/pt-br/video/", "")
       .replace(/\d/g, "");
     return description;
   };
@@ -63,7 +64,7 @@ const VideosGridItem = ({ reducer }) => {
             style={getSpanEstimate(video.width, video.height)}
           >
             <Link
-              to=""
+              to={`/video/${video.id}/${getVideoDescription(video.url)}`}
               onMouseEnter={playVideo}
               onTouchStart={playVideo}
               onMouseLeave={stopVideo}
@@ -72,8 +73,8 @@ const VideosGridItem = ({ reducer }) => {
               <div className="videoSource">
                 <video muted>
                   <source
-                    src={video.video_files[3].link}
-                    type={video.video_files[3].file_type}
+                    src={video.video_files[0].link}
+                    type={video.video_files[0].file_type}
                   />
                 </video>
               </div>

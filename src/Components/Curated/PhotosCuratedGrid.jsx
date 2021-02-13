@@ -8,15 +8,15 @@ import Error from "../Helpers/Error";
 
 const PhotosGrid = () => {
   // Loading das fotos curated
-  const { error, loading, perPage, page, data } = useSelector(
+  const { loading, data, error, asyncActionArgs } = useSelector(
     (state) => state.curated
   );
   const dispatch = useDispatch();
 
   // Fazendo uma requisição no endpoint de fotos curated
   React.useEffect(() => {
-    dispatch(getCuratedPhotos({ perPage, page }));
-  }, [dispatch, perPage, page]);
+    dispatch(getCuratedPhotos({ ...asyncActionArgs }));
+  }, [dispatch, asyncActionArgs]);
 
   if (error) return <Error error={error} />;
   return (
