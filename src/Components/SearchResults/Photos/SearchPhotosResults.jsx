@@ -46,15 +46,10 @@ const SearchPhotosResults = ({
         <div className="wrapper">
           <div className="title">
             <h1> {title} </h1>
+            {subText && <p>Mostrando resultados para "{cleandQuery}"</p>}
           </div>
-          {subText && (
-            <p className="subText">
-              {" "}
-              Mostrando resultados para "{cleandQuery}"{" "}
-            </p>
-          )}
           {/* Filtros para refinar a pesquisa */}
-          {filters && (
+          {filters && data?.photos.length ? (
             <Filters
               reducer="searchPhotos"
               filterOrientation={filterOrientation}
@@ -63,7 +58,7 @@ const SearchPhotosResults = ({
               resetSize={resetSize}
               resetPage={resetPage}
             />
-          )}
+          ) : null}
           {/* Grid com as imagens retornadas no endpoint de SEARCH_PHOTOS */}
           <SearchPhotosResultsGrid totalResults={totalResults} />
           {/* Atribuindo os créditos para o Pexels */}
