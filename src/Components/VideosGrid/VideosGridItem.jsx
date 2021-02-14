@@ -82,6 +82,7 @@ const VideosGridItem = ({ reducer }) => {
   // é trocado para false
   const displayVideo = ({ target }) => {
     setLoadingVideo(false);
+    target.removeAttribute("poster");
     target.style.opacity = 1;
   };
 
@@ -109,9 +110,14 @@ const VideosGridItem = ({ reducer }) => {
               onTouchEnd={pauseVideo}
             >
               <div className="videoSource">
-                <video muted onCanPlayThrough={displayVideo}>
+                <video
+                  poster={video.image}
+                  muted
+                  onCanPlayThrough={displayVideo}
+                  preload="metadata"
+                >
                   <source
-                    src={video.video_files[0].link}
+                    src={`${video.video_files[0].link}#t=0.5`}
                     type={video.video_files[0].file_type}
                   />
                 </video>
