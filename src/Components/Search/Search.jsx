@@ -5,6 +5,7 @@ import { ReactComponent as SerchBlack } from "../../Assets/searchBlack.svg";
 import { ReactComponent as SearchWhite } from "../../Assets/searchWhite.svg";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Search = ({ className }) => {
   // Estado do campo de pesquisa
@@ -86,6 +87,10 @@ const Search = ({ className }) => {
       </button>
     </form>
   );
+};
+
+Search.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Search;

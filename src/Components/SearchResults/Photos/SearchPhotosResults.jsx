@@ -14,6 +14,7 @@ import {
   resetSize,
   resetPage,
 } from "../../../Store/Reducers/searchPhotos.reducer";
+import PropTypes from "prop-types";
 
 const SearchPhotosResults = ({
   shape,
@@ -72,6 +73,15 @@ const SearchPhotosResults = ({
       </div>
     </div>
   );
+};
+
+SearchPhotosResults.propTypes = {
+  shape: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  filters: PropTypes.bool,
+  pagination: PropTypes.bool,
+  totalResults: PropTypes.bool,
+  subText: PropTypes.bool,
 };
 
 export default SearchPhotosResults;

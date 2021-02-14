@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 // Importando o custom hook useMedia para
 // verificar o tamamho da tela
 import useMedia from "../../Hooks/useMedia";
+import PropTypes from "prop-types";
 
 const ShapeDivider = ({ lightCSSclass, darkCSSclass }) => {
   // Tema atual do site
@@ -31,6 +32,11 @@ const ShapeDivider = ({ lightCSSclass, darkCSSclass }) => {
       )}
     </>
   );
+};
+
+ShapeDivider.propTypes = {
+  lightCSSclass: PropTypes.string.isRequired,
+  darkCSSclass: PropTypes.string.isRequired,
 };
 
 export default ShapeDivider;

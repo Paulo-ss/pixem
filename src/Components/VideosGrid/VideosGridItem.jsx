@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as CameraIcon } from "../../Assets/camera.svg";
 import useMedia from "../../Hooks/useMedia";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 const VideosGridItem = ({ reducer }) => {
   // Data retornada do fetch
@@ -96,6 +97,10 @@ const VideosGridItem = ({ reducer }) => {
         ))}
     </>
   );
+};
+
+VideosGridItem.propTypes = {
+  reducer: PropTypes.string.isRequired,
 };
 
 export default VideosGridItem;

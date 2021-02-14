@@ -6,6 +6,7 @@ import ShapeDivider from "../Helpers/ShapeDivider";
 import PhotosCuratedGrid from "./PhotosCuratedGrid";
 import Pagination from "../Helpers/Pagination";
 import { changePage } from "../../Store/Reducers/curated.reducer";
+import PropTypes from "prop-types";
 
 const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
   // Tema atual do site
@@ -91,6 +92,14 @@ const Photos = ({ animateInstantly, shape, seeMore, subText, pagination }) => {
       </div>
     </section>
   );
+};
+
+Photos.propTypes = {
+  animateInstantly: PropTypes.bool,
+  shape: PropTypes.bool,
+  seeMore: PropTypes.bool,
+  subText: PropTypes.bool,
+  pagination: PropTypes.bool,
 };
 
 export default Photos;

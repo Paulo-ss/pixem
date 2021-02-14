@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // Componente helper para pegar da url o parâmetro
 // da query de busca e fazer um dispatch no reducer
@@ -29,6 +30,10 @@ const GetSearchQuery = ({ setQuery }) => {
   }, [dispatch, setQuery, pathname, query]);
 
   return null;
+};
+
+GetSearchQuery.propTypes = {
+  setQuery: PropTypes.func.isRequired,
 };
 
 export default GetSearchQuery;

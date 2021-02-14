@@ -6,6 +6,7 @@ import { searchForPhotos } from "../../../Store/Reducers/searchPhotos.reducer";
 import TotalResults from "../../Helpers/TotalResults";
 import { useParams } from "react-router-dom";
 import Error from "../../Helpers/Error";
+import PropTypes from "prop-types";
 
 const SearchPhotosResultsGrid = ({ totalResults }) => {
   // Estado do resultados da pesquisa de fotos
@@ -47,6 +48,10 @@ const SearchPhotosResultsGrid = ({ totalResults }) => {
       </div>
     </>
   );
+};
+
+SearchPhotosResultsGrid.propTypes = {
+  totalResults: PropTypes.bool,
 };
 
 export default SearchPhotosResultsGrid;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const TextAnimation = ({ children }) => {
   // Ref para o elemento que tem o texto
@@ -31,6 +32,10 @@ const TextAnimation = ({ children }) => {
       {children}
     </div>
   );
+};
+
+TextAnimation.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default TextAnimation;
