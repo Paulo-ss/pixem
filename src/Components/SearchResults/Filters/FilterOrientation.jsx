@@ -5,6 +5,7 @@ import { ReactComponent as HorizontalIcon } from "../../../Assets/horizontal.svg
 import { ReactComponent as VerticalIcon } from "../../../Assets/vertical.svg";
 import { ReactComponent as SquarelIcon } from "../../../Assets/square.svg";
 import { ReactComponent as CloseIcon } from "../../../Assets/closeX.svg";
+import PropTypes from "prop-types";
 
 const FilterOrientation = ({
   reducer,
@@ -94,6 +95,13 @@ const FilterOrientation = ({
       </div>
     </div>
   );
+};
+
+FilterOrientation.propTypes = {
+  reducer: PropTypes.string.isRequired,
+  filterOrientation: PropTypes.func.isRequired,
+  resetOrientation: PropTypes.func.isRequired,
+  resetPage: PropTypes.func.isRequired,
 };
 
 export default FilterOrientation;

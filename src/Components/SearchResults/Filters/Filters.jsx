@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import FilterOrientation from "./FilterOrientation";
 import FilterSearch from "./FilterSearch";
 import FilterSize from "./FilterSize";
+import PropTypes from "prop-types";
 
 const Filters = ({
   reducer,
@@ -42,6 +43,15 @@ const Filters = ({
       />
     </div>
   );
+};
+
+Filters.propTypes = {
+  reducer: PropTypes.string.isRequired,
+  filterOrientation: PropTypes.func.isRequired,
+  filterSize: PropTypes.func.isRequired,
+  resetOrientation: PropTypes.func.isRequired,
+  resetSize: PropTypes.func.isRequired,
+  resetPage: PropTypes.func.isRequired,
 };
 
 export default Filters;

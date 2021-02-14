@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Componente que atualiza o título e a descrição
 // de cada página do site
@@ -15,6 +16,11 @@ const Head = ({ title, content }) => {
   }, [title, content]);
 
   return null;
+};
+
+Head.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default Head;

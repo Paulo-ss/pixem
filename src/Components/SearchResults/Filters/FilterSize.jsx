@@ -5,6 +5,7 @@ import { ReactComponent as LargeFileIcon } from "../../../Assets/largeFile.svg";
 import { ReactComponent as MediumFileIcon } from "../../../Assets/mediumFile.svg";
 import { ReactComponent as SmallFileIcon } from "../../../Assets/smallFile.svg";
 import { ReactComponent as CloseIcon } from "../../../Assets/closeX.svg";
+import PropTypes from "prop-types";
 
 const FilterSize = ({ reducer, filterSize, resetSize, resetPage }) => {
   // Estado do filtro de size
@@ -89,6 +90,13 @@ const FilterSize = ({ reducer, filterSize, resetSize, resetPage }) => {
       </div>
     </div>
   );
+};
+
+FilterSize.propTypes = {
+  reducer: PropTypes.string.isRequired,
+  filterSize: PropTypes.func.isRequired,
+  resetSize: PropTypes.func.isRequired,
+  resetPage: PropTypes.func.isRequired,
 };
 
 export default FilterSize;

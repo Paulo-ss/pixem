@@ -4,6 +4,7 @@ import Input from "../Inputs/Input";
 // Importando os SVGs das setas
 import { ReactComponent as PrevIcon } from "../../Assets/prev.svg";
 import { ReactComponent as NextIcon } from "../../Assets/next.svg";
+import PropTypes from "prop-types";
 
 const Pagination = ({ reducer, changePage }) => {
   // Página atual
@@ -104,6 +105,11 @@ const Pagination = ({ reducer, changePage }) => {
       )}
     </>
   );
+};
+
+Pagination.propTypes = {
+  reducer: PropTypes.string.isRequired,
+  changePage: PropTypes.func.isRequired,
 };
 
 export default Pagination;
