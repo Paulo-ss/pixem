@@ -3,5 +3,13 @@
 
   .photoWrapper {
     padding: $gutter;
+
+    @include responsive(small) {
+      padding: 3rem 2rem;
+    }
+
+    @include responsive(extraSmall) {
+      padding: 3rem 0.8rem;
+    }
   }
 }

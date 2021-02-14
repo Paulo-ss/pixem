@@ -6,4 +6,14 @@
   position: relative;
   padding: $gutter;
   padding-top: $shapeDividerGutter;
+
+  @include responsive(small) {
+    padding: 1rem;
+    padding-top: 1rem;
+  }
+
+  @include responsive(extraSmall) {
+    padding: 0.8rem;
+    padding-top: 1rem;
+  }
 }

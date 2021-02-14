@@ -1,6 +1,7 @@
 .photos {
   position: relative;
   padding-bottom: $gutter;
+  padding: $gutter 0;
 
   .subText {
     @include font(20, 400);

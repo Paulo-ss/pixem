@@ -150,10 +150,12 @@ a {
 
     @include responsive(small) {
       font-size: 1.8rem;
+      margin-bottom: 0.3rem;
     }
 
     @include responsive(extraSmall) {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
     }
 
     &::before {
@@ -171,6 +173,15 @@ a {
     @include font(20, 400);
     margin: 1rem 0 1.5rem 0;
     max-width: 500px;
+
+    @include responsive(small) {
+      margin: 0;
+    }
+
+    @include responsive(extraSmall) {
+      font-size: 1rem;
+      margin: 0;
+    }
   }
 }
 

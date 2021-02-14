@@ -3,9 +3,21 @@
   align-items: center;
   margin: 2rem 0 1rem 0;
 
+  @include responsive(extraSmall) {
+    justify-content: center;
+  }
+
   .logoPexels {
     margin-right: 0.7rem;
     padding: 0.7rem;
     width: 100px;
+  }
+
+  a {
+    @include responsive(extraSmall) {
+      line-height: 1.5;
+      max-width: 200px;
+      text-align: center;
+    }
   }
 }

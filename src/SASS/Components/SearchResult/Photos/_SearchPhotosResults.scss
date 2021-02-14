@@ -2,7 +2,25 @@
   position: relative;
   padding: $gutter;
 
+  @include responsive(small) {
+    padding: 2rem;
+    padding-top: 3rem !important;
+  }
+
+  @include responsive(extraSmall) {
+    padding: 0.8rem;
+    padding-top: 1.5rem !important;
+  }
+
   &.shapeDividerGutter {
     padding-top: $shapeDividerGutter;
+
+    @include responsive(small) {
+      padding-top: 0;
+    }
+
+    @include responsive(extraSmall) {
+      padding-top: 0;
+    }
   }
 }
