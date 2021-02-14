@@ -35,7 +35,12 @@ const VideoContent = () => {
             className="video"
             style={setVideoProportion(data.width, data.height)}
           >
-            <video autoPlay muted loop>
+            <video
+              muted
+              controls
+              controlsList="nodownload"
+              disablePictureInPicture
+            >
               <source
                 src={data.video_files[0].link}
                 type={data.video_files[0].file_type}
