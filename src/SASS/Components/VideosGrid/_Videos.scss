@@ -24,6 +24,15 @@
       position: relative;
       overflow: hidden;
 
+      .loadingVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1000px;
+        height: 700px;
+        z-index: 100;
+      }
+
       .videoSource {
         position: relative;
         height: 100%;

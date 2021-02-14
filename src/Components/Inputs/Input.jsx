@@ -16,7 +16,7 @@ const Input = ({ value, setValue, type, className, id, ...rest }) => {
 };
 
 Input.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
   setValue: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,

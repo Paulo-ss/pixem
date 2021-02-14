@@ -82,7 +82,7 @@ const Pagination = ({ reducer, changePage }) => {
               <form onSubmit={goToPage}>
                 <Input
                   value={pageInput}
-                  onChange={({ target }) => setPageInput(target.value)}
+                  setValue={({ target }) => setPageInput(target.value)}
                   type="text"
                   className="pageInput"
                   id="pageInput"

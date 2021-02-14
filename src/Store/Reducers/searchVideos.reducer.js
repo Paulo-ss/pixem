@@ -5,7 +5,7 @@ const searchVideos = createAsyncSlice({
   name: "searchVideos",
   initialState: {
     asyncActionArgs: {
-      query: "",
+      query: undefined,
       orientation: "",
       size: "",
       perPage: 20,

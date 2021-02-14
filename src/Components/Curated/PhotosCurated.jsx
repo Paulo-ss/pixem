@@ -98,7 +98,7 @@ Photos.propTypes = {
   animateInstantly: PropTypes.bool,
   shape: PropTypes.bool,
   seeMore: PropTypes.bool,
-  subText: PropTypes.bool,
+  subText: PropTypes.string,
   pagination: PropTypes.bool,
 };
 
