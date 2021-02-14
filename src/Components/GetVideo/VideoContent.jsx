@@ -11,11 +11,30 @@ const VideoContent = () => {
   // Tema atual do site
   const { theme } = useSelector((state) => state.userInterface);
 
+  // Função que define o tamanho do vídeo
+  // baseado na sua orientaçao
+  const setVideoProportion = (width, height) => {
+    if (width > height) {
+      return {
+        width: "auto",
+        height: `300px`,
+      };
+    } else {
+      return {
+        width: "auto",
+        height: `600px`,
+      };
+    }
+  };
+
   return (
     <>
       {data && (
         <>
-          <div className="video">
+          <div
+            className="video"
+            style={setVideoProportion(data.width, data.height)}
+          >
             <video autoPlay muted loop>
               <source
                 src={data.video_files[0].link}

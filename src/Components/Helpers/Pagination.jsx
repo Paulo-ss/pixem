@@ -14,7 +14,7 @@ const Pagination = ({ reducer, changePage }) => {
   // Dispatch
   const dispatch = useDispatch();
   // Número total de resultados
-  const totalResults = data?.total_results;
+  const totalResults = data && data.total_results;
   // Número total de páginas
   const totalPages = Math.ceil(totalResults / perPage);
   // Estado do input
@@ -75,7 +75,7 @@ const Pagination = ({ reducer, changePage }) => {
               onClick={prevPage}
             >
               <PrevIcon />
-              Anterior
+              <p> Anterior </p>
             </button>
             <div className="totalPages">
               <form onSubmit={goToPage}>
@@ -96,7 +96,7 @@ const Pagination = ({ reducer, changePage }) => {
               style={{ display: `${page === totalPages ? "none" : "flex"}` }}
               onClick={nextPage}
             >
-              Próxima
+              <p> Próxima </p>
               <NextIcon />
             </button>
           </div>

@@ -1,3 +1,11 @@
 .popularVideos {
   padding: $gutter;
+
+  @include responsive(small) {
+    padding: 2rem;
+  }
+
+  @include responsive(extraSmall) {
+    padding: 1rem;
+  }
 }

@@ -31,6 +31,12 @@
         padding: 0.6rem;
       }
 
+      p {
+        @include responsive(extraSmall) {
+          display: none;
+        }
+      }
+
       &:hover,
       &:focus {
         top: 3px;
