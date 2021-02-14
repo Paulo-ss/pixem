@@ -70,7 +70,7 @@ const Search = ({ className }) => {
     >
       <Input
         value={searchQuery}
-        onChange={({ target }) => setSearchQuery(target.value)}
+        setValue={({ target }) => setSearchQuery(target.value)}
         type="text"
         className={`searchInput ${
           theme ? "darkTheme darkTwoBg" : "lightTheme lightTwoBg"

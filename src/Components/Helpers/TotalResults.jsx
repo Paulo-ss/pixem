@@ -12,7 +12,7 @@ const TotalResults = ({ totalResults }) => {
 };
 
 TotalResults.propTypes = {
-  totalResults: PropTypes.string.isRequired,
+  totalResults: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default TotalResults;

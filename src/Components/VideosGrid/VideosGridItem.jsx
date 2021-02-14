@@ -11,6 +11,9 @@ const VideosGridItem = ({ reducer }) => {
 
   const matchMedia = useMedia("(min-width: 550px)");
 
+  // Estado do carregamento do arquivo do vídeo
+  const [loadingVideo, setLoadingVideo] = React.useState(true);
+
   // Função que define o span de column e row
   // que cada vídeo deve ocupar no grid baseado
   // no seu tamanho
@@ -41,18 +44,45 @@ const VideosGridItem = ({ reducer }) => {
   };
 
   // Função para quando o mouse passe por cima
-  // do Link a que engloba a img e o vídeo, o
-  // video começe a rodar
+  // do vídeo, o vídeo começe a rodar
   const playVideo = ({ currentTarget }) => {
     const videoPlayer = currentTarget.children[0].children[0];
-    videoPlayer.play();
+
+    if (videoPlayer) {
+      videoPlayer.play();
+    }
   };
 
-  // Quando o mouse sai de cima o Link, o
-  // vídeo para de rodar
-  const stopVideo = ({ currentTarget }) => {
+  // Função para quando o mouse sair de cima
+  // do vídeo, o vídeo de pause
+  const pauseVideo = ({ currentTarget }) => {
     const videoPlayer = currentTarget.children[0].children[0];
-    videoPlayer.pause();
+
+    if (videoPlayer) {
+      videoPlayer.pause();
+    }
+  };
+
+  // Definindo cores aleatórias de fundo para o
+  // elemento de loading enquanto o arquivo
+  // do vídeo carrega
+  const setBackgroundColor = () => {
+    // Valores rgb aleatórios
+    const randomRed = Math.floor(Math.random() * (240 - 15) + 15);
+    const randomGreen = Math.floor(Math.random() * (240 - 15) + 15);
+    const randomBlue = Math.floor(Math.random() * (240 - 15) + 15);
+
+    return {
+      background: `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`,
+    };
+  };
+
+  // Quando o arquivo da imagem está pronto
+  // para aparecer na tela, o estado setLoadingImg
+  // é trocado para false
+  const displayVideo = ({ target }) => {
+    setLoadingVideo(false);
+    target.style.opacity = 1;
   };
 
   if (data?.total_results === 0) {
@@ -75,16 +105,22 @@ const VideosGridItem = ({ reducer }) => {
               to={`/video/${video.id}/${getVideoDescription(video.url)}`}
               onMouseEnter={playVideo}
               onTouchStart={playVideo}
-              onMouseLeave={stopVideo}
-              onTouchEnd={stopVideo}
+              onMouseLeave={pauseVideo}
+              onTouchEnd={pauseVideo}
             >
               <div className="videoSource">
-                <video muted>
+                <video muted onCanPlayThrough={displayVideo}>
                   <source
                     src={video.video_files[0].link}
                     type={video.video_files[0].file_type}
                   />
                 </video>
+                {loadingVideo && (
+                  <div
+                    className="loadingVideo"
+                    style={setBackgroundColor()}
+                  ></div>
+                )}
               </div>
               <div className="details">
                 <div className="author">

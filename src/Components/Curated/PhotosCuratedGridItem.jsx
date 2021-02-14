@@ -10,6 +10,9 @@ const PhotosGridItem = () => {
 
   const matchMedia = useMedia("(min-width: 550px)");
 
+  // Estado do carregamento do arquivo da imagem
+  const [loadingImg, setLoadingImg] = React.useState(true);
+
   // Função que define o span de column e row
   // que cada imagem deve ocupar no grid baseado
   // no seu tamanho
@@ -38,6 +41,28 @@ const PhotosGridItem = () => {
     return description;
   };
 
+  // Definindo cores aleatórias de fundo para o
+  // elemento de loading enquanto o arquivo
+  // da imagem carrega
+  const setBackgroundColor = () => {
+    // Valores rgb aleatórios
+    const randomRed = Math.floor(Math.random() * (255 - 0) + 0);
+    const randomGreen = Math.floor(Math.random() * (255 - 0) + 0);
+    const randomBlue = Math.floor(Math.random() * (255 - 0) + 0);
+
+    return {
+      background: `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`,
+    };
+  };
+
+  // Quando o arquivo da imagem está pronto
+  // para aparecer na tela, o estado setLoadingImg
+  // é trocado para false
+  const displayImg = ({ target }) => {
+    setLoadingImg(false);
+    target.style.opacity = 1;
+  };
+
   return (
     <>
       {data &&
@@ -51,7 +76,11 @@ const PhotosGridItem = () => {
               <img
                 src={photo.src.large}
                 alt={`${getPhotoDescription(photo.url)}`}
+                onLoad={displayImg}
               />
+              {loadingImg && (
+                <div className="loadingImg" style={setBackgroundColor()}></div>
+              )}
               <div className="details">
                 <div className="author">
                   <p> {photo.photographer} </p>
