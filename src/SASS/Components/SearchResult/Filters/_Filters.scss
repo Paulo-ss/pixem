@@ -1,50 +1,67 @@
-.filters {
+// Botão dos filtros
+.filtrosBtn {
   position: relative;
+  top: 0;
+  left: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-
-  @include responsive(medium) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  border: none;
+  outline: none;
+  background: $primaryColor;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 3px 3px $dark;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
 
   @include responsive(small) {
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: 1.5rem;
   }
 
   @include responsive(extraSmall) {
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: 1.5rem;
   }
+
+  &:hover,
+  &:focus {
+    top: 3px;
+    left: 3px;
+    box-shadow: none;
+  }
+
+  p {
+    @include font(16, 400);
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.7rem;
+  }
+}
+
+// Filtros (títulos e radios inputs)
+.filters {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 
   .filter + .filter {
-    margin-left: 2rem;
-
-    @include responsive(medium) {
-      margin-left: 0;
-      margin-top: 1.5rem;
-    }
-
-    @include responsive(small) {
-      margin-left: 0;
-      margin-top: 1.5rem;
-    }
-
-    @include responsive(extraSmall) {
-      margin-left: 0;
-      margin-top: 1.5rem;
-    }
+    margin-top: 2rem;
+    border-top: 1px solid rgba($color: #e9e9e9, $alpha: 1);
   }
 
+  // Títulos dos filtros
   .filterTitle {
     display: flex;
     align-items: center;
 
     h3 {
       @include font(20, 400);
+      margin-top: 0.8rem;
       margin-right: 0.8rem;
     }
 
@@ -72,13 +89,22 @@
     }
   }
 
+  // Estilos dos inputs radios
   .filterRadios {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+
+    @include responsive(extraSmall) {
+      flex-direction: column;
+    }
 
     .radioLabel {
       position: relative;
+
+      @include responsive(extraSmall) {
+        flex-direction: column;
+        width: 100%;
+      }
 
       input {
         opacity: 0;
@@ -109,6 +135,10 @@
         transform: scale(0.9);
         transition: all 0.2s ease-out;
 
+        @include responsive(extraSmall) {
+          transform: scale(1);
+        }
+
         &:hover {
           background: darken($color: #76a4d7, $amount: 10%);
         }
@@ -130,7 +160,7 @@
       }
 
       @include responsive(extraSmall) {
-        margin-left: 0.5rem;
+        margin-left: 0rem;
       }
     }
   }

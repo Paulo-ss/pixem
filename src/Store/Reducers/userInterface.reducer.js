@@ -13,6 +13,8 @@ const slice = createSlice({
     mobileMenu: false,
     // Estado do dropdown
     dropdownMenu: false,
+    // Estado do modal,
+    modal: false,
   },
   reducers: {
     // Action para trocar o tema do site
@@ -32,6 +34,10 @@ const slice = createSlice({
     toggleDropdownMenu(state, action) {
       state.dropdownMenu = action.payload;
     },
+    // Action para abrir e fechar o modal
+    toggleModal(state, action) {
+      state.modal = action.payload;
+    },
   },
 });
 
@@ -40,5 +46,6 @@ export const {
   toggleTheme,
   toggleMobileMenu,
   toggleDropdownMenu,
+  toggleModal,
 } = slice.actions;
 export default slice.reducer;

@@ -35,21 +35,6 @@
 
     .photographer {
       margin-bottom: 3rem;
-
-      & > div {
-        display: flex;
-        align-items: center;
-
-        h3 {
-          margin-top: 1rem;
-        }
-
-        svg {
-          width: 30px;
-          height: 30px;
-          margin-right: 1rem;
-        }
-      }
     }
 
     .resolution {
@@ -84,6 +69,21 @@
           left: 3px;
           box-shadow: none;
         }
+      }
+    }
+
+    .svgTitle {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        margin-top: 1rem;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+        margin-right: 1rem;
       }
     }
   }

@@ -14,7 +14,7 @@
   }
 }
 
-// Animação da esquerda pra direita
+// Animação de cima para baixo curta
 @mixin showFromTop {
   @keyframes keyShowFromTop {
     from {
@@ -24,6 +24,20 @@
     to {
       opacity: 1;
       transform: translateX(0);
+    }
+  }
+}
+
+// Animação de cima para baixo completa
+@mixin slideFromBottom {
+  @keyframes keySlideFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(100vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

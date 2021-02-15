@@ -4,6 +4,10 @@ import FilterOrientation from "./FilterOrientation";
 import FilterSearch from "./FilterSearch";
 import FilterSize from "./FilterSize";
 import PropTypes from "prop-types";
+import OpenModal from "../../Helpers/OpenModal";
+// Importando os SVGs
+import { ReactComponent as FiltersIcon } from "../../../Assets/filters.svg";
+import ModalContent from "../../Helpers/ModalContent";
 
 const Filters = ({
   reducer,
@@ -27,20 +31,33 @@ const Filters = ({
   }, [dispatch, resetOrientation, resetSize, resetPage]);
 
   return (
-    <div className={`filters`}>
-      <FilterSearch />
-      <FilterOrientation
-        reducer={reducer}
-        filterOrientation={filterOrientation}
-        resetOrientation={resetOrientation}
-        resetPage={resetPage}
-      />
-      <FilterSize
-        reducer={reducer}
-        filterSize={filterSize}
-        resetSize={resetSize}
-        resetPage={resetPage}
-      />
+    <div>
+      {/* Botão que abre e fecha o modal */}
+      <OpenModal>
+        <button type="button" className="filtrosBtn">
+          <FiltersIcon />
+          <p> Filtrar </p>
+        </button>
+      </OpenModal>
+      {/* Conteúdo do modal */}
+      <ModalContent>
+        {/* Filtros de pesquisa */}
+        <div className="filters">
+          <FilterSearch />
+          <FilterOrientation
+            reducer={reducer}
+            filterOrientation={filterOrientation}
+            resetOrientation={resetOrientation}
+            resetPage={resetPage}
+          />
+          <FilterSize
+            reducer={reducer}
+            filterSize={filterSize}
+            resetSize={resetSize}
+            resetPage={resetPage}
+          />
+        </div>
+      </ModalContent>
     </div>
   );
 };

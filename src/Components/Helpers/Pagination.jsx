@@ -35,20 +35,22 @@ const Pagination = ({ reducer, changePage }) => {
   };
 
   // Função que vai para a página anterior do botão prev page
-  const prevPage = () => {
+  const prevPage = ({ currentTarget }) => {
     if (page > 1) {
       goToTop();
       dispatch(changePage(page - 1));
       setPageInput(page - 1);
+      currentTarget.blur();
     }
   };
 
   // Função que vai para a próxima página do botão next page
-  const nextPage = () => {
+  const nextPage = ({ currentTarget }) => {
     if (page < totalPages) {
       goToTop();
       dispatch(changePage(page + 1));
       setPageInput(page + 1);
+      currentTarget.blur();
     }
   };
 
