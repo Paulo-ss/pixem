@@ -1,8 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// Importando os SVG de camera
+// Importando os SVGs
 import { ReactComponent as CameraWhiteIcon } from "../../Assets/camera.svg";
 import { ReactComponent as CameraDarkIcon } from "../../Assets/cameraDark.svg";
+import { ReactComponent as ResolutionIcon } from "../../Assets/resolucao.svg";
+import { ReactComponent as ResolutionWhiteIcon } from "../../Assets/resolucaoWhite.svg";
+import { ReactComponent as ColorsIcon } from "../../Assets/paletaCores.svg";
+import { ReactComponent as ColorsWhiteIcon } from "../../Assets/paletaCoresWhite.svg";
 
 const PhotoContent = () => {
   // Acessando o estado com os dados da foto
@@ -31,7 +35,7 @@ const PhotoContent = () => {
           </div>
           <div className="photoDetails">
             <div className="photographer">
-              <div>
+              <div className="svgTitle">
                 {theme ? <CameraWhiteIcon /> : <CameraDarkIcon />}
                 <h3> Fotógrafo </h3>
               </div>
@@ -47,13 +51,19 @@ const PhotoContent = () => {
               </a>
             </div>
             <div className="resolution">
-              <h3> Resolução </h3>
+              <div className="svgTitle">
+                {theme ? <ResolutionWhiteIcon /> : <ResolutionIcon />}
+                <h3> Resolução </h3>
+              </div>
               <p>
                 {data.width} x {data.height} pixels
               </p>
             </div>
             <div className="color">
-              <h3> Cor predominante </h3>
+              <div className="svgTitle">
+                {theme ? <ColorsWhiteIcon /> : <ColorsIcon />}
+                <h3> Cor predominante </h3>
+              </div>
               <span style={{ background: `${data.avg_color}` }}></span>
             </div>
             <div className="download">

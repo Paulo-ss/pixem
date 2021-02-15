@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 // Importando os SVGs
 import { ReactComponent as CameraWhiteIcon } from "../../Assets/camera.svg";
 import { ReactComponent as CameraDarkIcon } from "../../Assets/cameraDark.svg";
+import { ReactComponent as ResolutionIcon } from "../../Assets/resolucao.svg";
+import { ReactComponent as ResolutionWhiteIcon } from "../../Assets/resolucaoWhite.svg";
 
 const VideoContent = () => {
   // Data do reducer de video
@@ -48,8 +50,8 @@ const VideoContent = () => {
             </video>
           </div>
           <div className="videoDetails">
-            <div className="photographer">
-              <div>
+            <div className="videographer">
+              <div className="svgTitle">
                 {theme ? <CameraWhiteIcon /> : <CameraDarkIcon />}
                 <h3> Cinegrafista </h3>
               </div>
@@ -65,7 +67,10 @@ const VideoContent = () => {
               </a>
             </div>
             <div className="resolution">
-              <h3> Resolução </h3>
+              <div className="svgTitle">
+                {theme ? <ResolutionWhiteIcon /> : <ResolutionIcon />}
+                <h3> Resolução </h3>
+              </div>
               <p>
                 {data.width} x {data.height} pixels
               </p>
